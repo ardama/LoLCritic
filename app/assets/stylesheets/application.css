@@ -11,3 +11,15 @@
  *= require_self
  *= require_tree .
  */
+#content {
+	min-height: 500px;
+}
+#footer {
+	background-color: #eee;
+	height: 100px;
+	position:fixed;
+	bottom:0;
+	width:100%;
+}
+
+

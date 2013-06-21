@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
 	def index
 		@user = User.new
+		@homepage = true
 	end
 
 	def help

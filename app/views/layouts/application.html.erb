@@ -14,10 +14,10 @@
 </head>
 
 
-
+<% unless @homepage %>
 <body>
 	<!-- Where navbar get rendered -->
-	<header class="navbar " id="">
+	<header class="navbar navbar-fixed-top" id="">
 	  <nav class="navbar-inner">
 	    <div class="container">
 	      <%= render 'layouts/navigation' %>
@@ -26,7 +26,7 @@
 	</header>
 
 
-	<div class="container">
+	<div class="container" id="content">
 
 		<!-- Where alerts get rendered -->
 	  <div id="alert-block">
@@ -37,8 +37,13 @@
 	  <%= yield %>
 
 	</div>
-
-	<div id="footer" class=""></div>
+	<div id="footer" class="">
+	</div>
 
 </body>
+<% else %>
+
+	<%= render 'home/index' %>
+
+<% end %>
 </html>
