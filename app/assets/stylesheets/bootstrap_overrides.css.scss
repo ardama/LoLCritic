@@ -1,6 +1,9 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
 @import "colors";
+body {
+	font-family: "Open Sans";
+}
 
 .navbar-fixed-top {
 	position: fixed;

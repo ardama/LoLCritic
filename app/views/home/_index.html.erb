@@ -1,6 +1,6 @@
 <body class="homepage-body">
 
-	<header class="navbar navbar-fixed-top" id="">
+	<header class="navbar navbar-inverse navbar-fixed-top" id="">
 	  <nav class="navbar-inner">
 	    <div class="container">
 	      <%= render 'layouts/navigation' %>
@@ -18,34 +18,53 @@
 
 		<div class="homepage-band" id="band-2">
 			<div class="container">
-			</div>
-		</div>
-		
-		<div class="homepage-band" id="band-3">
-			<div class="container">
-				<div class="row">
-					<div class ="span4">
-						<div class="homepage-well">
-							<h3>Upload</h3>
-							<p>asdj hdahds hasdhr ahsdgha shdfhasd fasjdf hjs</p>
-						</div>
-					</div>
-				  <div class="span4">
-				    <div class="homepage-well">
-				      <h3>Critique</h3>
-				      <p>asdj hdahds hasdhr ahsdgha shdfhasd fasjdf hjs</p>
-				    </div>
-				  </div>
-				  <div class="span4">
-				    <div class="homepage-well">
-				      <h3>Learn</h3>
-				      <p>asdj hdahds hasdhr ahsdgha shdfhasd fasjdf hjs</p>
-				    </div>
-				  </div>
-				</div>
+				<div class="btn-group">
+					<%= link_to "Register", new_user_registration_path, :class => 'btn btn-inverse' %>
+					<%= link_to "Sign in", new_user_session_path, :class => 'btn btn-inverse' %>
+				</div
 			</div>
 		</div>
 
+		<div class="homepage-band" id="band-3">
+			<div class="container">
+				<div class="row">
+					<ul class="homepage-wells">
+						<li>
+							<div class ="span4">
+								<div class="homepage-well">
+									<h3>Upload</h3>
+									<p>asdj hdahds hasdhr ahsdgha shdfhasd fasjdf hjs</p>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="divider">
+							</div>
+						</li>
+						<li>
+						  <div class="span4">
+						    <div class="homepage-well">
+						      <h3>Critique</h3>
+						      <p>asdj hdahds hasdhr ahsdgha shdfhasd fasjdf hjs</p>
+						    </div>
+						  </div>
+						</li>
+						<li>
+							<div class="divider">
+							</div>
+						</li>
+						<li>
+						  <div class="span4">
+						    <div class="homepage-well">
+						      <h3>Learn</h3>
+						      <p>asdj hdahds hasdhr ahsdgha shdfhasd fasjdf hjs</p>
+						    </div>
+						  </div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div id="footer">
 	</div>
