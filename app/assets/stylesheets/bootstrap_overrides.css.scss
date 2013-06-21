@@ -2,6 +2,14 @@
 @import "bootstrap-responsive";
 @import "colors";
 
+.navbar-fixed-top {
+	position: fixed;
+}
+
+.navbar-fixed-top .navbar-fixed-inner {
+	padding: 2px;
+}
+
 .hero-unit {
 	
 
