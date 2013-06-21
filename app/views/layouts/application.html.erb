@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
+
+
 <head>
-  <title>LoLCritic</title>
+  <title>LoLCritic
+	  <% if content_for?(:page_title) %>
+	   | <%= yield(:page_title) %>
+	  <% end %>
+	</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+
+
+<body>
+	<!-- Where navbar get rendered -->
+	<header class="navbar " id="">
+	  <nav class="navbar-inner">
+	    <div class="container">
+	      <%= render 'layouts/navigation' %>
+	    </div>
+	  </nav>
+	</header>
+
+
+	<div class="container">
+
+		<!-- Where alerts get rendered -->
+	  <div id="alert-block">
+	  	<%= render 'layouts/messages' %>
+	  </div>
+
+		<!-- Where page content get rendered -->
+	  <%= yield %>
+
+	</div>
+
+	<div id="footer" class=""></div>
 
 </body>
 </html>
