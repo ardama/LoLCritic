@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 
 group :development, :test do
-  gem 'sqlite3'
+  gem 'pg'
 end
 
 group :production do
@@ -32,7 +32,10 @@ gem 'kaminari'
 gem 'paperclip', '~> 3.0'
 gem "remotipart", "~> 1.0"
 
+gem "execjs"
+gem "therubyracer"
 
+gem "thin"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
