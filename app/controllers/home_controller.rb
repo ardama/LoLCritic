@@ -2,6 +2,8 @@ class HomeController < ApplicationController
 	before_filter :authenticate_user!, :except => [:index, :help]
 
 	def index
+		@user = User.new
+		@homepage = true
 	end
 
 	def help

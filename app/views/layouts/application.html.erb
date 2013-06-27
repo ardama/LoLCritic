@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html>
+
+
 <head>
-  <title>LoLCritic</title>
+  <title>LoLCritic
+	  <% if content_for?(:page_title) %>
+	   | <%= yield(:page_title) %>
+	  <% end %>
+	</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= favicon_link_tag %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<%= yield %>
+
+<% unless @homepage %>
+<body>
+	<!-- Where navbar get rendered -->
+	<header class="navbar navbar-fixed-top" id="">
+	  <nav class="navbar-inner">
+	    <div class="container">
+	      <%= render 'layouts/navigation' %>
+	    </div>
+	  </nav>
+	</header>
+
+
+	<div class="container" id="content">
+
+		<!-- Where alerts get rendered -->
+	  <div id="alert-block">
+	  	<%= render 'layouts/messages' %>
+	  </div>
+
+		<!-- Where page content get rendered -->
+	  <%= yield %>
+
+	</div>
+	<div id="footer" class="">
+	</div>
 
 </body>
+<% else %>
+
+	<%= render 'home/index' %>
+
+<% end %>
 </html>
