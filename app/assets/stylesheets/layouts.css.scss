@@ -12,5 +12,10 @@
 }
 .navbar {
 	box-shadow: 0px 0px 10px $ThemeBlack;
+}
 
+.navbar-inner {
+  background-color: $ThemeBlack;
+  background-image: none;
+  border: 0px;
 }
