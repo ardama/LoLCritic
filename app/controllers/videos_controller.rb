@@ -4,7 +4,7 @@ class VideosController < ApplicationController
 
   def show
   	@video = Video.find(params[:id])
-  	@reviews = @video.reviews.order("rating desc").page(params[:page]).per(8))
+  	@reviews = @video.reviews.order("rating desc").page(params[:page]).per(8)
 		@path = @video.generate_path
 
 		@ratings = current_user.ratings
@@ -28,6 +28,10 @@ class VideosController < ApplicationController
 		@videos = Video.search(params[:search]).page(params[:page]).per(12)
 		@search = params[:search]
 		render "index"
+	end
+
+	def new
+		@video = Video.new
 	end
 
 	def create

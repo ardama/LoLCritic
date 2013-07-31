@@ -1,0 +1,203 @@
+<ul id="homepage-video-tabs" class="nav nav-pills">
+  <li <% if @tab=="popular"%>class="active"<%end%> ><a href="popular">Popular</a></li>
+  <li <% if @tab=="new"%>class="active"<%end%> ><a href="new">New</a></li>
+  <li <% if @tab=="best"%>class="active"<%end%> ><a href="best">Best</a></li>
+</ul>
+<div id="videos" class="">
+	<% if @videos.size > 0 %>
+		<ul id="thumbnail-list" class="thumbnail-list">
+			<% @videos.each do |video| %>
+				<li>
+					<a href="<%= video_path(video) %>" class="thumbnail-link">
+						<img class="thumnail-image" src="<%= video.generate_thumbnail %>"/>
+						<div class="thumbnail-info">
+							<span>
+								<h4 class="thumbnail-title"><%= video.title %></h4>
+								<p><%= video.description? ? truncate(video.description, :length => 100) : "No Description Provided" %></p>
+							</span>
+						</div>
+					</a>
+				</li>
+			<% end %>
+		</ul>
+	<% else %>
+		<ul id="homepage-video-list" class="video-list media-list">
+			<li class="media video-listing">
+				<a href="#" class="thumbnail-link pull-left">
+					<div style="background-color:#ddd; height:100px; width:175px">
+						<%= image_tag "favicon2.ico", :size => "100x100"  %>
+					</div>
+				</a>
+				<div class="media-body video-listing-info">
+					<div class="video-listing-header">
+						<a href="#" class="video-listing-title">
+							This is the title of the video
+						</a>
+						<p class="video-listing-upload">
+							Uploaded by
+							<a href="#" class="video-listing-uploader">user235237</a>
+							 on Jul 27, 2013
+						</p>
+					</div>
+					<div class="video-listing-body">
+						<div class="video-listing-tags">
+							<table>
+								<tr>
+									<td class="video-listing-table-header">Champion:</td>
+									<td class="video-listing-table-info">Malphite</td>
+									<td class="video-listing-table-header">Lane:</td>
+									<td class="video-listing-table-info">Top</td>
+								</tr>
+								<tr>
+									<td class="video-listing-table-header">Opponent:</td>
+									<td class="video-listing-table-info">Shen</td>
+									<td class="video-listing-table-header">Role:</td>
+									<td class="video-listing-table-info">Initiator</td>
+								</tr>
+							</table>
+							<table>
+								<tr>
+									<td class="video-listing-table-header">Focus:</td>
+									<td class-"video-listing-table-info">Last Hitting, Zoning, Harassing, Map Awareness</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li class="media video-listing">
+				<a href="#" class="thumbnail-link pull-left">
+					<div style="background-color:#ddd; height:100px; width:175px">
+						<%= image_tag "favicon2.ico", :size => "100x100"  %>
+					</div>
+				</a>
+				<div class="media-body video-listing-info">
+					<div class="video-listing-header">
+						<a href="#" class="video-listing-title">
+							This is the title of the video
+						</a>
+						<p class="video-listing-upload">
+							Uploaded by
+							<a href="#" class="video-listing-uploader">user235237</a>
+							 on Jul 27, 2013
+						</p>
+					</div>
+					<div class="video-listing-body">
+						<div class="video-listing-tags">
+							<table>
+								<tr>
+									<td class="video-listing-table-header">Champion:</td>
+									<td class="video-listing-table-info">Malphite</td>
+									<td class="video-listing-table-header">Lane:</td>
+									<td class="video-listing-table-info">Top</td>
+								</tr>
+								<tr>
+									<td class="video-listing-table-header">Opponent:</td>
+									<td class="video-listing-table-info">Shen</td>
+									<td class="video-listing-table-header">Role:</td>
+									<td class="video-listing-table-info">Initiator</td>
+								</tr>
+							</table>
+							<table>
+								<tr>
+									<td class="video-listing-table-header">Focus:</td>
+									<td class-"video-listing-table-info">Last Hitting, Zoning, Harassing, Map Awareness</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li class="media video-listing">
+				<a href="#" class="thumbnail-link pull-left">
+					<div style="background-color:#ddd; height:100px; width:175px">
+						<%= image_tag "favicon2.ico", :size => "100x100"  %>
+					</div>
+				</a>
+				<div class="media-body video-listing-info">
+					<div class="video-listing-header">
+						<a href="#" class="video-listing-title">
+							This is the title of the video
+						</a>
+						<p class="video-listing-upload">
+							Uploaded by
+							<a href="#" class="video-listing-uploader">user235237</a>
+							 on Jul 27, 2013
+						</p>
+					</div>
+					<div class="video-listing-body">
+						<div class="video-listing-tags">
+							<table>
+								<tr>
+									<td class="video-listing-table-header">Champion:</td>
+									<td class="video-listing-table-info">Malphite</td>
+									<td class="video-listing-table-header">Lane:</td>
+									<td class="video-listing-table-info">Top</td>
+								</tr>
+								<tr>
+									<td class="video-listing-table-header">Opponent:</td>
+									<td class="video-listing-table-info">Shen</td>
+									<td class="video-listing-table-header">Role:</td>
+									<td class="video-listing-table-info">Initiator</td>
+								</tr>
+							</table>
+							<table>
+								<tr>
+									<td class="video-listing-table-header">Focus:</td>
+									<td class-"video-listing-table-info">Last Hitting, Zoning, Harassing, Map Awareness</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</li>
+
+			<li class="media video-listing">
+				<a href="#" class="thumbnail-link pull-left">
+					<div style="background-color:#ddd; height:100px; width:175px">
+						<%= image_tag "favicon2.ico", :size => "100x100"  %>
+					</div>
+				</a>
+				<div class="media-body video-listing-info">
+					<div class="video-listing-header">
+						<a href="#" class="video-listing-title">
+							This is the title of the video
+						</a>
+						<p class="video-listing-upload">
+							Uploaded by
+							<a href="#" class="video-listing-uploader">user235237</a>
+							 on Jul 27, 2013
+						</p>
+					</div>
+					<div class="video-listing-body">
+						<div class="video-listing-tags">
+							<table>
+								<tr>
+									<td class="video-listing-table-header">Champion:</td>
+									<td class="video-listing-table-info">Malphite</td>
+									<td class="video-listing-table-header">Lane:</td>
+									<td class="video-listing-table-info">Top</td>
+								</tr>
+								<tr>
+									<td class="video-listing-table-header">Opponent:</td>
+									<td class="video-listing-table-info">Shen</td>
+									<td class="video-listing-table-header">Role:</td>
+									<td class="video-listing-table-info">Initiator</td>
+								</tr>
+							</table>
+							<table>
+								<tr>
+									<td class="video-listing-table-header">Focus:</td>
+									<td class-"video-listing-table-info">Last Hitting, Zoning, Harassing, Map Awareness</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</li>
+
+		</ul>
+	<% end %>
+</div>

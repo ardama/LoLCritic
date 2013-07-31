@@ -10,6 +10,8 @@ LoLCritic::Application.routes.draw do
 
   devise_for :users
 
+  get ':tab' => 'home#index'
+
   resources :videos do
     post 'rate', :on => :member
     get 'search', :on => :collection

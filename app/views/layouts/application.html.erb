@@ -7,6 +7,9 @@
 	  <% if content_for?(:page_title) %>
 	   | <%= yield(:page_title) %>
 	  <% end %>
+	  <% if @homepage %>
+	   | Welcome
+	  <% end %>
 	</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
@@ -16,10 +19,12 @@
 </head>
 
 
-<% unless @homepage %>
+<% if @homepage %>
+	<%= render 'home/index' %>
+<% else %>
 <body>
 	<!-- Where navbar get rendered -->
-	<header class="navbar navbar-fixed-top" id="">
+	<header class="navbar navbar-inverse navbar-fixed-top" id="">
 	  <nav class="navbar-inner">
 	    <div class="container">
 	      <%= render 'layouts/navigation' %>
@@ -32,7 +37,7 @@
 
 		<!-- Where alerts get rendered -->
 	  <div id="alert-block">
-	  	<%= render 'layouts/messages' %>
+	  	<%#= render 'layouts/messages' %>
 	  </div>
 
 		<!-- Where page content get rendered -->
@@ -43,9 +48,5 @@
 	</div>
 
 </body>
-<% else %>
-
-	<%= render 'home/index' %>
-
 <% end %>
 </html>

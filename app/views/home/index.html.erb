@@ -1,0 +1,23 @@
+<% unless @homepage %>
+	<% content_for :page_title do %>
+	Browse Videos
+	<% end %>
+<% end %>
+
+
+<div id="homepage-content" class="row content">
+
+	<div id="videos-container" class="span9">
+		<%= render "videos/index" %>
+	</div>
+	<div id="filters-container" class="span3">
+		<%= render "videos/filters" %>
+	</div>
+</div>
+
+<%= javascript_include_tag "jquery.hoverdir.js" %>
+<script type="text/javascript">
+	$('ul.thumbnail-list > li').each(function(){
+		$(this).hoverdir();
+	});
+</script>

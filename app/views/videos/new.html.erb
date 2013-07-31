@@ -1,0 +1,44 @@
+<% content_for :page_title do %>
+Upload Video
+<% end %>
+<%# makes nav link dented %>
+<% content_for :navli1 do %>
+class="active"
+<% end %>
+
+<div class="span8 offset2">
+  <% if current_user %>
+    <h3 class="header">Upload a video</h3>
+    <%= form_for @video, :html => { :multipart => true } do |f| %>
+     
+      <div class="field">
+        <%= f.label:title %>
+        <%= f.text_field :title, :placeholder => "What would you like to call this video?", :style => "width:400px", :required => true %>
+      </div>
+      <div class="field">
+        <%= f.label :link%>
+        <%= f.text_field :link, :placeholder => "What is the URL of the YouTube video?", :style => "width:400px", :required => true %>
+      </div>
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description, :placeholder => "What is this a video of?", :style => "width:400px; height:125px" %>
+      </div>
+      <div class="field">
+        <%= f.label "Supplemental Material" %>
+        <%= f.file_field :supplemental %>
+      </div>
+
+      <div class="actions">
+        <%= link_to 'Back', root_url, :class => "btn btn-large" %>
+        <%= f.submit "Submit", :class => "btn btn-primary btn-large" %>
+      </div>
+
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+
+    <% end %>
+  <% else %>
+
+  Please sign in or create an account to upload a video.
+  <%= link_to 'Back', root_url, :class => "btn" %>
+  <% end %>
+</div>

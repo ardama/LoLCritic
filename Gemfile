@@ -26,15 +26,13 @@ gem 'jquery-rails'
 gem 'better_errors'
 gem 'binding_of_caller', '>= 0.7.1'
 gem 'bootstrap-sass'
-gem 'font-awesome-rails'
+#gem 'font-awesome-rails'
 gem 'devise'
 gem 'kaminari'
 gem 'paperclip', '~> 3.0'
 gem "remotipart", "~> 1.0"
 
 gem "execjs"
-gem "therubyracer"
-
 gem "thin"
 
 # To use ActiveModel has_secure_password

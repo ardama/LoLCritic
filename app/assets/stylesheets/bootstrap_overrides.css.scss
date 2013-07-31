@@ -5,16 +5,81 @@ body {
 	font-family: "Open Sans";
 }
 
+/**
+NAVBAR OVERRIDES
+**/
 .navbar-fixed-top {
 	position: fixed;
+	height: 40px;
 }
 
-.navbar-fixed-top .navbar-fixed-inner {
-	padding: 2px;
+.navbar-fixed-top .navbar-inner {
+	padding: 0px;
+	height: 40px;
+}
+.navbar .nav > li > a {
+	color: $ThemeWhite;
+	text-shadow: none;
+	border-left: 1px solid $ThemeBlack;
+}
+.navbar .nav > li:last-child > a {
+	border-right: 1px solid $ThemeBlack;
+
+} 
+.navbar .nav > li > .brand {
+	padding: 8px;
+	border: none;
+}
+.navbar .nav > li > .brand:hover {
+/** Cancel out hover effect for brand **/
+	background-image: -moz-linear-gradient(top, #444444, #222222);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222));
+	background-image: -webkit-linear-gradient(top, #444444, #222222);
+	background-image: -o-linear-gradient(top, #444444, #222222);
+	background-image: linear-gradient(to bottom, #444444, #222222);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF444444', endColorstr='#FF222222', GradientType=0);
+	border-color: #222222 #222222 black;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	*background-color: #222222;
+}
+.navbar .nav > li:last-child > .brand {
+/** Cancel out dividers for brand **/
+	border:none;
+}
+.navbar .nav > li > a:hover {
+	color: white;
+	background-color: #363636;
+	background-image: -moz-linear-gradient(top, #333333, #111111);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#111111));
+	background-image: -webkit-linear-gradient(top, #333333, #111111);
+	background-image: -o-linear-gradient(top, #333333, #111111);
+	background-image: linear-gradient(to bottom, #333333, #111111);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF333333', endColorstr='#FF111111', GradientType=0);
+	border-color: #111111 #111111 black;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	*background-color: #111111;
+
+}
+.navbar .nav > li:hover {
+}
+.navbar-inverse .navbar-inner {
+	color: white;
+	background-color: #363636;
+	background-image: -moz-linear-gradient(top, #444444, #222222);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222));
+	background-image: -webkit-linear-gradient(top, #444444, #222222);
+	background-image: -o-linear-gradient(top, #444444, #222222);
+	background-image: linear-gradient(to bottom, #444444, #222222);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF444444', endColorstr='#FF222222', GradientType=0);
+	border-color: #222222 #222222 black;
+	border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+	*background-color: #222222;
 }
 
-.hero-unit {
-	
+/**
+BUTTON OVERRIDES
+**/
 
-
-}

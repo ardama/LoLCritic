@@ -1,3 +1,61 @@
 // Place all the styles related to the Videos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors";
+/* VIDEO LISTINGs */
+
+.video-list {
+
+}
+.video-listing {
+	margin-top:10px;
+	border-bottom: 1px solid $ThemeLightGray;
+	padding-bottom: 10px;
+}
+
+.thumbnail-link {
+
+}
+
+.video-listing-info {
+	margin: 2px;
+}
+
+.video-listing-header {
+	height:40px;
+}
+
+.video-listing-title {
+	font-weight: bold;
+	font-size: 12pt;
+	color: $ThemeBlue1;
+	margin-bottom:0px;
+}
+.video-listing-uploader {
+
+}
+
+.video-listing-upload {
+
+}
+.video-listing-body {
+	height:60px;
+	position:relative;
+}
+
+.video-listing-tags {
+	position:absolute;
+	bottom:0px;
+	font-size: 10pt;
+	line-height: 16px
+}
+.video-listing-table-header {
+	font-weight: bold;
+	color: $ThemeBlue1;
+	padding-right:4px;
+}
+
+.video-listing-table-info {
+	padding-right: 12px;
+}
