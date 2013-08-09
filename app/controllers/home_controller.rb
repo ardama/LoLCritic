@@ -3,9 +3,14 @@ class HomeController < ApplicationController
 
 	def index
 		@user = User.new
-		@videos = Video.order("rating desc")#.page(params[:page]).per(12)
+		@videos = Video.all
 		if params[:tab]
 			@tab = params[:tab].downcase
+			if @tab == "new"
+				@videos = Video.order("id asc")#.page(params[:page]).per(12)
+			elsif @tab == "best"
+				@videos = Video.order("rating desc")#.page(params[:page]).per(12)
+			end
 		else
 			@tab = "popular"
 		end

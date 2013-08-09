@@ -1,22 +1,26 @@
-<ul class="nav pull-left">
-	<li>
-		<%= link_to image_tag("WhiteLogo.png", :size => "94x0"), root_path, :class => "brand" %>
-	</li>
-</ul>
-<ul class="nav pull-right">
-		<% if current_user %>
-			<li>
-	            <%= link_to current_user.email, account_page_path, :title => "Your Account" %>
-	        </li>
-	        <li>
-				<%= link_to raw("Upload"), new_video_path, :title => "Upload Video" %>
-			</li>
-			<li>
-				<%= link_to raw("Log Out"), destroy_user_session_path, :method => 'delete', :title => "Sign Out" %>
-			</li>
-		<% else %>
-			<li>
-		        <%= link_to raw("Sign In"), new_user_session_path, :title => "Sign In" %>
-			</li>
-	<% end %>
-</ul>
+<div class="span6 offset1">
+	<ul class="nav pull-left">
+		<li>
+			<%= link_to image_tag("WhiteLogo.png", :size => "94x0"), root_path, :class => "brand" %>
+		</li>
+	</ul>
+</div>
+<div class="span4">
+	<ul class="nav pull-right">
+			<% if current_user %>
+				<li>
+		            <%= link_to raw("<i class=\"icon-user icon-white\"></i>"), account_page_path, :title => "Your Account" %>
+		        </li>
+		        <li>
+					<%= link_to raw("<i class=\"icon-eject icon-white\"></i>"), new_video_path, :title => "Upload Video" %>
+				</li>
+				<li>
+					<%= link_to raw("<i class=\"icon-share icon-white\"></i>"), destroy_user_session_path, :method => 'delete', :title => "Sign Out" %>
+				</li>
+			<% else %>
+				<li>
+			        <%= link_to raw("<i class=\"icon-share-alt icon-white\"></i>"), new_user_session_path, :title => "Sign In" %>
+				</li>
+		<% end %>
+	</ul>
+</div>

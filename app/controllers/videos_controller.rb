@@ -35,7 +35,33 @@ class VideosController < ApplicationController
 	end
 
 	def create
-		video = Video.new(params[:video])
+		video = Video.new
+
+		# Basic Attributes
+		video.title = params[:video][:title]
+		video.link = params[:video][:link]
+		video.user_id = params[:video][:user_id]
+
+		# Tagging Attributes
+		video.champion_list.add(params[:video][:champion])
+		video.opponent_list.add(params[:video][:opponent])
+		video.lane_list.add(params[:video][:lane])
+		params[:video][:position].each do |p|
+			video.position_list.add(p)
+		end
+		if params[:video][:focus].length > 1
+			params[:video][:focus].each do |f|
+				video.focu_list.add(f) 
+			end
+		else
+			video.focu_list = "None"
+		end
+
+		video.num_ratings = 0
+		video.rating = 0
+		video.total_rating = 0
+
+
 		if video.save
 			flash[:success] = "Video successfully created!"
 			redirect_to video

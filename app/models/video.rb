@@ -1,8 +1,10 @@
 class Video < ActiveRecord::Base
   attr_accessible :description, :link, :num_ratings, :rating, :title, :total_rating, :user_id
 
-  belongs_to :user_id
+  belongs_to :user
   has_many :reviews, :dependent => :destroy
+
+  acts_as_taggable_on :champion, :opponent, :lane, :position, :focus
 
 
   def extract_id()
@@ -38,7 +40,67 @@ class Video < ActiveRecord::Base
   end
 
   def generate_thumbnail()
-    return "http://img.youtube.com/vi/" + self.extract_id() + "/0.jpg"
+    return "http://i1.ytimg.com/vi/" + self.extract_id() + "/hqdefault.jpg"
+  end
+
+  def champion_image()
+    name = self.champion_list[0].delete('.').delete(' ').delete('\'')
+    return "Champs/" + name + ".png"
+  end
+
+  def opponent_image()
+    name = self.opponent_list[0].delete('.').delete(' ').delete('\'')
+    return "Champs/" + name + ".png"
+  end
+
+  def generate_description()
+    d = "Playing "
+    unless self.champion_list[0] == "None"
+      d += "<u>" + self.champion_list[0] + "</u>"
+    end
+    unless self.opponent_list[0] == "None"
+      d += " against "
+      d += "<u>" + self.opponent_list[0] + "</u>"
+    end
+    unless self.lane_list[0] == "None"
+      d += " in the "
+      d += "<u>" + self.lane_list[0] + "</u>"
+    end
+    if self.position_list.length > 1
+      d += " as the team's "
+      self.position_list.each do |p|
+        if p.length > 0
+          d += "<u>" + p + "</u>"
+          d += ", "
+        end
+      end
+      d = d[0..-3]
+    end
+    return d
+  end
+
+
+  def add_tag(tag,type)
+    if type == "focus"
+      self.focus_list.add(tag);
+    elsif type == "champion"
+      self.champion_list.add(tag);
+    elsif type == "opponent"
+      self.opponent_list.add(tag);
+    elsif type == "lane"
+      self.lane_list.add(tag);
+    elsif type == "position"
+      self.position_list.add(tag);
+    end
+  end
+
+        
+      
+  def get_champion()
+    return self.champion_list[0]   
+  end
+  def get_opponent()
+    return self.opponent_list[0]   
   end
 
 end

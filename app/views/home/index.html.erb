@@ -3,15 +3,16 @@
 	Browse Videos
 	<% end %>
 <% end %>
-
-
-<div id="homepage-content" class="row content">
-
-	<div id="videos-container" class="span9">
-		<%= render "videos/index" %>
-	</div>
+<div id="homepage-filters-content" class="row-fluid content">
 	<div id="filters-container" class="span3">
 		<%= render "videos/filters" %>
+	</div>
+</div>
+<div id="homepage-videos-content" class="row-fluid content">
+	<div id="filters-space-holder" class="span3">
+	</div>
+	<div id="videos-container" class="span9">
+		<%= render "videos/index" %>
 	</div>
 </div>
 

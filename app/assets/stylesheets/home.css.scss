@@ -79,7 +79,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 }
 .homepage-wells p {
 	font-size: 12pt;
-	color:$ThemePrimary;
+	color:$ThemeBlue1;
 	line-height: 27px;
 	margin-top: 20px;
 	text-align: left;
@@ -88,7 +88,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 
 
 /* HOMEPAGE AFTER SIGN IN */
-#homepage-content {
+#homepage-videos-content {
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
@@ -96,5 +96,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 
 }
 #homepage-video-tabs {
-	margin-bottom: 15px;
+	margin: 0px;
+	width: 100%;
+	background-color: $ThemeBlue1;
+}
+#homepage-navbar {
+	box-shadow: none;
+}
+#homepage-navbar-inner {
+	padding:0px;
+}
+#homepage-navbar li a{
+	border:none;
+}
+#homepage-navbar li a:hover{
+	background-color: $ThemeBlue1;
+	color:$ThemeWhite;
+	height:16px;
+	border-bottom: solid 4px #fff;
+}
+#homepage-navbar .active a{
+	background-color: $ThemeBlue1;
+	color:$ThemeWhite;
+	-webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.250);
+	-moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.250);
+	box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.250);
+
+}
+#filters-space-holder {
+	height:100px
+}
+#homepage-filters-content {
+	position:fixed;
+}
+#filters-container {
+	position: fixed;
+	top: 70px;
+	min-width: 210px;
+	max-width: 310px;
 }
