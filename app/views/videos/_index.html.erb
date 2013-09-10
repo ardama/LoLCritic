@@ -1,11 +1,11 @@
-<div id="homepage-navbar" class="navbar">
-	<nav id="homepage-navbar-inner" class="navbar-inner">
-		<ul id="homepage-video-tabs" class="nav">
+<div id="homepage-video-nav" class="tabbable tabs-below">
+  <div class="tab-content">
+  </div>
+		<ul id="homepage-video-tabs" class="nav nav-pills">
 		  <li <% if @tab=="popular"%>class="active"<%end%> ><a href="popular">Popular</a></li>
 		  <li <% if @tab=="new"%>class="active"<%end%> ><a href="new">New</a></li>
 		  <li <% if @tab=="best"%>class="active"<%end%> ><a href="best">Best</a></li>
 		</ul>
-	</nav>
 </div>
 <div id="videos" class="">
 	<% if @videos.size > 0 %>

@@ -89,38 +89,43 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 
 /* HOMEPAGE AFTER SIGN IN */
 #homepage-videos-content {
-	margin-top: 30px;
 	margin-bottom: 30px;
+}
+#homepage-space-holder {
+	height:30px;
+	width: 100%;
+	background-color: $ThemeBlue1;
 }
 #homepage-video-list {
 
 }
-#homepage-video-tabs {
-	margin: 0px;
+#homepage-video-nav {
+	margin-top: 20px;
 	width: 100%;
-	background-color: $ThemeBlue1;
+	background-color: #fff;
+	border-top:none;
 }
 #homepage-navbar {
 	box-shadow: none;
 }
-#homepage-navbar-inner {
-	padding:0px;
-}
-#homepage-navbar li a{
+#homepage-video-tabs {
 	border:none;
-}
-#homepage-navbar li a:hover{
+	margin-bottom: 0px;
 	background-color: $ThemeBlue1;
-	color:$ThemeWhite;
-	height:16px;
-	border-bottom: solid 4px #fff;
 }
-#homepage-navbar .active a{
+#homepage-video-tabs li a{
+	color: $ThemeWhite;
+	border: 1px solid $ThemeBlue1;
+}
+#homepage-video-tabs li a:hover{
+	background-color: $ThemeWhite;
+	color:$ThemeBlue1;
+	border-color: $ThemeWhite;
+}
+#homepage-video-tabs .active a{
 	background-color: $ThemeBlue1;
+	border-color: $ThemeWhite;
 	color:$ThemeWhite;
-	-webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.250);
-	-moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.250);
-	box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.250);
 
 }
 #filters-space-holder {
@@ -130,8 +135,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 	position:fixed;
 }
 #filters-container {
-	position: fixed;
-	top: 70px;
-	min-width: 210px;
-	max-width: 310px;
+//	min-width: 210px;
+//	max-width: 310px;
+	margin-top: 20px;
 }

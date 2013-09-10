@@ -23,7 +23,7 @@
 }
 
 .video-listing:nth-child(odd) {
-	background-color: #eeeeee;
+	background-color: $ThemeBlueGray;
 //	z-index: 0;
 
 }
@@ -113,6 +113,18 @@
 }
 
 /* FILTERS */
+
+#filters-header {
+	height: 40px;
+	width: 100%;
+	background-color: $ThemeBlue1;
+	color: $ThemeWhite;
+	font-size: 14px;
+}
+#filters-header p {
+	padding-top: 10px;
+	padding-left: 15px;
+}
 
 
 /* UPLOAD FORM */
