@@ -1,1 +1,37 @@
-<%= @video %>
+<%= render "videos/video_player" %>
+
+<div class="content">
+	<div class="row-fluid">
+		<div class="span8" id="video-container">
+			<%= render "videos/video" %>
+		</div>
+		<div class="span4" id="flag-container">
+			<div id="flag-stream-header">
+				<p>
+					Stream
+				</p>
+			</div>
+			<%= render "flags/stream" %>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span8" id="review-form">
+	      <%= render 'reviews/new' %>
+		</div>
+
+		<%= javascript_include_tag "wysihtml5-0.3.0.js" %>
+		<%= javascript_include_tag "bootstrap-wysihtml5.js" %>
+
+		<script>
+
+
+
+		</script>
+	</div>
+	<div class="row-fluid">
+		<div class="span8" id="review-container">
+			<%= render "reviews/list" %>
+		</div>
+	</div>
+</div>
+

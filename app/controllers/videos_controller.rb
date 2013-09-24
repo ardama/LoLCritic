@@ -4,6 +4,8 @@ class VideosController < ApplicationController
 
   def show
   	@video = Video.find(params[:id])
+  	@owner = User.find(@video.user_id)
+  	@review = Review.new
   	@reviews = @video.reviews.order("rating desc").page(params[:page]).per(8)
 		@path = @video.generate_path
 

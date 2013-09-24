@@ -4,26 +4,26 @@
 
 @import "colors";
 /* VIDEO LISTINGS */
-
 .video-list {
 
 }
 .video-listing {
 	padding-top:8px;
+	padding-bottom: 8px;
 	padding-left: 8px;
-	//border-bottom: 1px solid $ThemeLightGray;
+	//border-bottom: 1px solid $ThemeBlue1;
 	margin-top: 0px;
 	position:relative;
+	box-shadow:  0 1px 1px -1px $ThemeBlue1;
 }
 
 .video-listing:nth-child(even) {
-//	box-shadow:  0 5px 5px -5px $ThemeDarkGray1,
-//				 0 -5px 5px -5px $ThemeDarkGray1;
+
 //	z-index: 1;
 }
 
 .video-listing:nth-child(odd) {
-	background-color: $ThemeBlueGray;
+//	background-color: $ThemeBlueGray;
 //	z-index: 0;
 
 }
@@ -31,7 +31,9 @@
 .thumbnail-link {
 	vertical-align: middle;
 }
-
+.thumbnail-link.pull-left {
+	margin-right: 0px;
+}
 .thumbnail-crop {
     width: 176px;
     height: 102px;
@@ -42,24 +44,36 @@
     width: 176px;
     margin: -16px 0 0 0;
 }
-
+#image-container {
+	height:102px;
+	width:51px;
+}
 .video-listing-info {
 	height: 102px;
 }
 
 .video-listing-header {
-	height:40px;
-	margin-bottom: 2px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 60px;
+}
+.video-listing-header p {
+	margin-bottom: 0px;
 }
 
 .video-listing-title {
 	font-weight: bold;
-	font-size: 12pt;
+	font-size: 11pt;
+	line-height: 16px;
 	color: $ThemeBlue1;
 	margin-bottom:0px;
+	display: block;
 }
-.video-listing-uploader {
-
+.video-listing-title:hover {
+	color: $ThemeBlue1;
+}
+.video-listing-uploader, .video-listing-uploader:hover {
+	color: $ThemeBlue1;
 }
 
 .video-listing-upload {
@@ -87,43 +101,38 @@
 	padding: 0 10px;
 }
 .video-listing-description {
+	margin-left: 60px;
 }
 .video-listing-description u {
 	text-decoration: none;
 	font-weight: bold;
-	color: $ThemeBlue1;
+	color: $ThemeDarkGray2;
+}
+u.description-champion {
+//	color: $ThemeGreen;
+}
+u.description-opponent {
+//	color: $ThemeRed;
 }
 .champion-image {
-	border: 3px solid #55bb55;
+//	border-left: 3px solid $ThemeGreen;
+	border-right: 4px solid $ThemeGreen;
 }
 .opponent-image {
-	border: 3px solid #bb5555;
+//	border-left: 3px solid $ThemeRed;
+	border-right: 4px solid $ThemeRed;
 }
 
 .video-listing-focus {
 	font-size: 10pt;
 	line-height: 16px;
-	padding: 4px 5px 6px 0px;
+	margin-left: 60px;
 }
 .video-listing-focus u {
 	text-decoration: none;
 	font-weight: bold;
-	color: $ThemeBlue1;
+	color: $ThemeDarkGray2;
 	padding-right:4px;
-}
-
-/* FILTERS */
-
-#filters-header {
-	height: 40px;
-	width: 100%;
-	background-color: $ThemeBlue1;
-	color: $ThemeWhite;
-	font-size: 14px;
-}
-#filters-header p {
-	padding-top: 10px;
-	padding-left: 15px;
 }
 
 
@@ -148,4 +157,102 @@
 	background-color: $ThemeLightGray;
 }
 
+/* VIDEO PAGE */
 
+#video-container {
+	margin-top: 40px;
+}
+
+
+/* FLAG STREAM */
+#flag-container {
+	margin-top: 40px;
+	background-color: $ThemeDarkGray1;
+	margin-left: 0px;
+}
+#flag-stream-header {
+	height: 40px;
+	width: 100%;
+	background-color: $ThemeDarkGray2;
+	color: $ThemeWhite;
+	font-size: 14px;
+	font-weight: bold;
+}
+#flag-stream-header p {
+	padding-top: 10px;
+	padding-left: 15px;
+}
+#flags {
+	padding-bottom: -40px;
+	height:100%;
+	overflow-y:auto;
+}
+.flag {
+	color:$ThemeWhite;
+	width: 100%;
+	border-top: 1px solid $ThemeGray;
+	border-bottom: 1px solid $ThemeDarkGray2;
+	background-color: $ThemeDarkGray1;
+	text-align: left;
+	padding:0px;
+	font-size: 10pt;
+}
+.flag:first-child {
+}
+.flag:hover {
+	background-color: $ThemeGray;
+}
+.flag.active {
+	background-color: $ThemeBlue1;
+	border-top-color: $ThemeBlue2;
+}
+.flag-info {
+	padding: 5px 10px 2px 10px;
+	color: $ThemeLightGray;
+}
+
+.flag-content {
+	padding: 0px 10px 8px 10px;
+	color:$ThemeWhite;
+}
+
+#wysi-textarea {
+	//margin-top: 10px;
+}
+
+ul.wysihtml5-toolbar {
+	margin: 10px 0px;
+}
+ul.wysihtml5-toolbar li {
+	background-color: $ThemeWhite;
+	margin-bottom: 0px;
+}
+ul.wysihtml5-toolbar li:last-child {
+	margin-right: 0px;
+}
+ul.wysihtml5-toolbar .btn {
+}
+ul.wysihtml5-toolbar .li:hover {
+}
+.flag-body {
+	width: 450px;
+}
+.flag-form {
+	overflow:visible;
+}
+.flag-form .input-prepend .add-on {
+	border-radius: 0px;
+	background-color: $ThemeDarkGray1;
+	color: $ThemeWhite;
+	text-shadow: none;
+	border-color: $ThemeDarkGray1;
+	font-size: 10pt;
+
+}
+.flag-time {
+	width:35px;
+	margin-right: 5px;
+}
+.flag-form .input-prepend input {
+	font-size: 10pt;
+}

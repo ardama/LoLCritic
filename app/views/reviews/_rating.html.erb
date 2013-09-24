@@ -1,0 +1,25 @@
+<% upvote_icon = "<i class='icon-chevron-up icon-large vote-icon' id='review-upvote-" + r.id.to_s + "'></i>" %>
+<% downvote_icon = "<i class='icon-chevron-down icon-large vote-icon' id='review-downvote-" + r.id.to_s + "'></i>" %>
+<% if @review_ratings[r.id] && @review_ratings[r.id] > 0 %>
+	<% upvote_icon = "<i class='icon-chevron-up icon-large vote-icon voted' id='review-upvote-" + r.id.to_s + "'></i>" %>
+<% end %>
+
+<% if @review_ratings[r.id] && @review_ratings[r.id] < 0 %>
+	<% downvote_icon = "<i class='icon-chevron-down icon-large vote-icon voted' id='review-downvote-" + r.id.to_s + "'></i>" %>
+<% end %>
+
+<div class="pull-left upvote-container">
+	<%= link_to raw(upvote_icon), upvote_review_path(:id => r.id), :remote => true, :method => "post" %>
+</div>
+<div class="pull-left rating-container">
+	<% if r.rating && r.rating >= 0 %>
+		<text id="review-rating-<%= r.id.to_s %>" class='review-rating-value pos'>
+	<% else %>
+		<text id="review-rating-<%= r.id.to_s %>" class='review-rating-value neg'>
+	<% end %>
+		<%= r.rating %>
+	</text>
+</div>
+<div class="pull-left downvote-container">
+	<%= link_to raw(downvote_icon), downvote_review_path(:id => r.id), :remote => true, :method => "post" %>
+</div>

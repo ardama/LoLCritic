@@ -1,11 +1,9 @@
-<div id="homepage-video-nav" class="tabbable tabs-below">
-  <div class="tab-content">
-  </div>
-		<ul id="homepage-video-tabs" class="nav nav-pills">
-		  <li <% if @tab=="popular"%>class="active"<%end%> ><a href="popular">Popular</a></li>
-		  <li <% if @tab=="new"%>class="active"<%end%> ><a href="new">New</a></li>
-		  <li <% if @tab=="best"%>class="active"<%end%> ><a href="best">Best</a></li>
-		</ul>
+<div id="homepage-video-nav" class="">
+	<ul id="homepage-video-tabs" class="nav nav-pills">
+	  <li <% if @tab=="popular"%>class="active"<%end%> ><a href="popular">Popular</a></li>
+	  <li <% if @tab=="new"%>class="active"<%end%> ><a href="new">New</a></li>
+	  <li <% if @tab=="best"%>class="active"<%end%> ><a href="best">Best</a></li>
+	</ul>
 </div>
 <div id="videos" class="">
 	<% if @videos.size > 0 %>
@@ -18,160 +16,38 @@
 					</div>
 					</a>
 					<div class="media-body video-listing-info">
+						<div id="image-container" class="pull-left">
+							<% unless video.get_champion() == "None" %>
+							<%= image_tag video.champion_image, :size => "51x51", :class => "champion-image", :title => video.get_champion %>
+							<% end %>
+							<%= image_tag video.opponent_image, :size => "51x51", :class => "opponent-image", :title => video.get_opponent %>
+						</div>
+
 						<div class="video-listing-header">
 							<a href="<%= video_path(video) %>" class="video-listing-title">
 								<%= video.title %>
 							</a>
 							<p class="video-listing-upload">
-								Uploaded by
+								by
 								<a href="#" class="video-listing-uploader"><%=User.find(video.user_id).email %></a>
-								 on <%= video.created_at %>
+								 | uploaded <%= video.generate_time() %>
 							</p>
 						</div>
 						<div class="video-listing-body">
 							<div class="video-listing-tags">
-								<table>
-									<tr>
-										<% unless video.get_champion() == "None" %>
-											<td><%= image_tag video.champion_image, :size => "53x53", :class => "champion-image", :title => video.get_champion %></td>
-										<% end %>
-										<% unless video.get_opponent() == "None" %>
-											<td><%= image_tag video.opponent_image, :size => "53x53", :class => "opponent-image", :title => video.get_opponent %></td>
-										<% end %>
-										<td>
-											<div class="video-listing-description">
-												<%= raw(video.generate_description) %>
-											</div>
-										</td>
-									</tr>
-								</table>
+								<div class="video-listing-description">
+									<%= raw(video.generate_description) %>
+								</div>
+								<div class="video-listing-focus">
+									<u>Tags:</u> <%= video.focu_list %>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="video-listing-focus">
-						<u>Tags:</u> <%= video.focu_list %>
 					</div>
 				</li>
 			<% end %>
 		</ul>
 	<% else %>
-
-
-
-
-
-
-			<li class="media video-listing">
-				<a href="#" class="thumbnail-link pull-left">
-					<div style="background-color:#444; height:100px; width:175px">
-						<%#= image_tag "favicon2.ico", :size => "100x100"  %>
-					</div>
-				</a>
-				<div class="media-body video-listing-info">
-					<div class="video-listing-header">
-						<a href="#" class="video-listing-title">
-							This is the title of the video
-						</a>
-						<p class="video-listing-upload">
-							Uploaded by
-							<a href="#" class="video-listing-uploader">user235237</a>
-							 on Jul 27, 2013
-						</p>
-					</div>
-					<div class="video-listing-body">
-						<div class="video-listing-tags">
-							<table>
-								<tr>
-									<td><%= image_tag "Shen.png", :size => "53x53", :class => "friendly-champion-image" %></td>
-									<td>
-										<div class="video-listing-description">
-										Playing <u>Shen</u> in the <u>Top Lane</u> 
-										</div>
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="video-listing-focus">
-					<u>Tags:</u> Map Awareness, Teamfighting, Positioning, Objectives, Initiating, Tanking, Kiting
-				</div>
-			</li>
-			<li class="media video-listing">
-				<a href="#" class="thumbnail-link pull-left">
-					<div style="background-color:#444; height:100px; width:175px">
-						<%#= image_tag "favicon2.ico", :size => "100x100"  %>
-					</div>
-				</a>
-				<div class="media-body video-listing-info">
-					<div class="video-listing-header">
-						<a href="#" class="video-listing-title">
-							This is the title of the video
-						</a>
-						<p class="video-listing-upload">
-							Uploaded by
-							<a href="#" class="video-listing-uploader">user235237</a>
-							 on Jul 27, 2013
-						</p>
-					</div>
-					<div class="video-listing-body">
-						<div class="video-listing-tags">
-							<table>
-								<tr>
-									<td><%= image_tag "Shen.png", :size => "53x53", :class => "friendly-champion-image" %></td>
-									<td><%= image_tag "Malphite.png", :size => "53x53", :class => "enemy-champion-image" %></td>
-									<td>
-										<div class="video-listing-description">
-										Playing <u>Shen</u> against <u>Malphite</u> in the <u>Top Lane</u> as the team's <u>Initiator, Tank</u> 
-										</div>
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="video-listing-focus">
-					<u>Tags:</u> Last Hitting, Zoning, Harassing, Warding, Item Builds, Invading, Ganking, Roaming, Map Awareness, Teamfighting, Positioning, Objectives, Initiating, Tanking, Kiting, Focusing, Matchups
-				</div>
-			</li>
-			<li class="media video-listing">
-				<a href="#" class="thumbnail-link pull-left">
-					<div style="background-color:#444; height:100px; width:175px">
-						<%#= image_tag "favicon2.ico", :size => "100x100"  %>
-					</div>
-				</a>
-				<div class="media-body video-listing-info">
-					<div class="video-listing-header">
-						<a href="#" class="video-listing-title">
-							This is the title of the video
-						</a>
-						<p class="video-listing-upload">
-							Uploaded by
-							<a href="#" class="video-listing-uploader">user235237</a>
-							 on Jul 27, 2013
-						</p>
-					</div>
-					<div class="video-listing-body">
-						<div class="video-listing-tags">
-							<table>
-								<tr>
-									<td><%= image_tag "Malphite.png", :size => "53x53", :class => "friendly-champion-image" %></td>
-									<td><%= image_tag "Shen.png", :size => "53x53", :class => "enemy-champion-image" %></td>
-									<td>
-										<div class="video-listing-description">
-										Playing <u>Malphite</u> against <u>Shen</u> in the <u>Top Lane</u> as the team's <u>Initiator, Tank</u> 
-										</div>
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
-				</div>
-				<div class="video-listing-focus">
-					<u>Tags:</u> Last Hitting, Zoning, Harassing, Warding, Item Builds, Invading, Ganking, Roaming, Map Awareness, Teamfighting, Positioning, Objectives, Initiating, Tanking, Kiting, Focusing, Matchups
-				</div>
-			</li>
-
-		</ul>
+		No Videos Found.
 	<% end %>
 </div>

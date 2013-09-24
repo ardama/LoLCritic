@@ -5,10 +5,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-  	video = Video.find(params[:video_id])
-  	review = video.reviews.create(params[:review])
-  	review.set_user_id(current_user.id)
-  	review.set_item_times
+    video = Video.find(params[:video_id])
+    review = video.reviews.create(params[:review])
+    review.set_user_id(current_user.id)
+    review.set_flag_times()
+    review.rating = 0;
+    review.save
 
   	user = video.user
   	notification = user.notifications.create(

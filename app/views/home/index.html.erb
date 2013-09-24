@@ -3,18 +3,19 @@
 	Browse Videos
 	<% end %>
 <% end %>
+
+<% content_for :head do %>
+  <%= javascript_include_tag "optionArrays.js" %>
+  <%= javascript_include_tag "filter.js" %>
+  <%= javascript_include_tag "homepage.js" %>
+<% end %>
+
 <div id="homepage-videos-content" class="row-fluid content">
-	<div id="filters-container" class="span3">
+	<div id="filters-container" class="pull-left">
 		<%= render "videos/filters" %>
 	</div>
-	<div id="videos-container" class="span9">
+	<div id="videos-container" class="">
 		<%= render "videos/index" %>
 	</div>
 </div>
 
-<%= javascript_include_tag "jquery.hoverdir.js" %>
-<script type="text/javascript">
-	$('ul.thumbnail-list > li').each(function(){
-		$(this).hoverdir();
-	});
-</script>

@@ -9,7 +9,7 @@
 }
 .chzn-container .chzn-drop {
   background: #fff;
-  border: 1px solid #cccccc;
+  border: 1px solid $ThemeBlue1;
   border-top: 0;
   position: absolute;
   top: 29px;
@@ -334,7 +334,7 @@
   border: 1px solid $ThemeBlue1;
 }
 .chzn-container-active .chzn-single-with-drop {
-  border: 1px solid #cccccc;
+  border: 1px solid $ThemeBlue1;
   -webkit-box-shadow: 0 1px 0 #fff inset;
   -moz-box-shadow   : 0 1px 0 #fff inset;
   box-shadow        : 0 1px 0 #fff inset;

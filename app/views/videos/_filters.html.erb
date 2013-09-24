@@ -3,5 +3,20 @@
 		Filter Videos
 	</p>
 </div>
-<div style="background-color:#bbb; width:100%; height:800px;">
+<div id="filters" style="">
+	<%= form_tag do %>
+		<p>Champion</p>
+	  <%= select_tag(:champion, options_for_select({"" => "None"}),{:class => "filter chosen-single"})%>
+		<p>Opponent</p>
+    <%= select_tag(:opponent, options_for_select({"" => "None"}),{:class => "filter chosen-single"})%> 
+		<p>Lane</p>
+    <%= select_tag(:lane, options_for_select({"" => "None"}),{:class => "filter chosen-single"})%> 
+		<p>Role</p>
+		<%= select_tag(:position, options_for_select({}),{:class => "filter chosen-multiple", :multiple => true})%>
+		<p>Tags</p>
+    <%= select_tag(:focus, options_for_select({}),{:class => "filter chosen-multiple", :multiple => true})%>
+
+    <%= submit_tag "Filter", :class => "btn btn-primary btn-filter" %>
+
+  <% end %>
 </div>

@@ -1,0 +1,51 @@
+<script src="http://www.youtube.com/player_api?enablejsapi=1&version=3"></script>
+
+<script type="text/javascript">
+
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+var player;
+
+function setSize() {
+	var width = $("#video-container").width();
+	var height = width * 9.0/16.0 + 30;
+	
+	if(player)
+		player.setSize(width,height);
+
+	$("#flag-container").height(height);
+	$("#flags").height(height - 40);
+	$("#wysi-textarea").width(width - 32);
+  $('.flag-body').css('width', width - 181 + "px");
+
+}
+function onYouTubeIframeAPIReady() {
+	player = new YT.Player('video-player', {
+	  width: 0,
+	  height: 0,
+	  videoId:'<%= escape_javascript(@video.extract_id()) %>',
+	  playerVars: {
+	  	showinfo: 0,
+	    theme: 'dark',
+	    color: 'white',
+	    autohide: 1
+	  },
+	  events: {
+	  }
+	});
+
+	setSize();
+};
+
+window.onresize = function () {	
+	setSize();
+}
+$(document).ready(function() {
+	$("#wysi-textarea").width($("#video-container").width() - 32);
+	$('#wysi-textarea').wysihtml5();
+	$('#wysi-container').collapse();
+});
+
+</script>
