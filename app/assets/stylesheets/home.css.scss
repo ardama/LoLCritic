@@ -91,14 +91,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 #homepage-videos-content {
 	margin-bottom: 30px;
 }
-#homepage-space-holder {
-	height:30px;
-	width: 100%;
-	background-color: $ThemeBlue1;
-}
-#homepage-video-list {
-
-}
 #homepage-video-nav {
 	margin-top: 20px;
 	width: 100%;
@@ -112,6 +104,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 	border:none;
 	margin-bottom: 0px;
 	background-color: $ThemeBlue1;
+	font-weight: bold;
 }
 #homepage-video-tabs li a{
 	color: $ThemeWhite;
@@ -134,8 +127,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 #homepage-filters-content {
 	position:fixed;
 }
-#filters-container {
-//	min-width: 210px;
-//	max-width: 310px;
+
+#videos-container {
+	margin-left: 0px;
+	overflow:hidden;
+	min-width: 600px;
+	max-width: 850px;
+}
+
+/* FILTERS */
+#filters {
+	width: 100%;
+	margin-left: 15px;
+	margin-top: 0px;
+}
+#filters .filter {
+	width: 240px;
+}
+#filters p {
+	color: $ThemeWhite;
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+#filters-header {
+	height: 40px;
+	width: 100%;
+	background-color: $ThemeDarkGray2;
+	color: $ThemeWhite;
+	font-size: 14px;
+	font-weight: bold;
+}
+#filters-header p {
+	padding-top: 10px;
+	padding-left: 15px;
+}
+#filters-container{
 	margin-top: 20px;
+	width: 270px;
+	background-color: $ThemeDarkGray1;
+}
+
+#filters .btn-filter {
+	margin-top: 20px;
+	height: 30px;
+	width: 120px;
+	border: none;
+	box-shadow: none;
+	font-size: 11pt;
 }

@@ -53,14 +53,38 @@ class Video < ActiveRecord::Base
     return "Champs/" + name + ".png"
   end
 
+  def generate_time()
+    current_time = Time.new
+    video_time = self.created_at
+    diff = current_time - video_time
+    unit = " minute"
+    if diff < 60
+      return "just now"
+    elsif diff < 3600
+      diff = diff / 60
+      unit = " minute"
+    elsif diff < 86400
+      diff = diff / 3600
+      unit = " hour"
+    else
+      diff = diff / 86400
+      unit = " day"
+    end
+    diff = diff.round.to_s
+    if diff == "1"
+      unit += "s"
+    end
+    return diff + unit + " ago"
+  end
+
   def generate_description()
     d = "Playing "
     unless self.champion_list[0] == "None"
-      d += "<u>" + self.champion_list[0] + "</u>"
+      d += "<u class='description-champion'>" + self.champion_list[0] + "</u>"
     end
     unless self.opponent_list[0] == "None"
       d += " against "
-      d += "<u>" + self.opponent_list[0] + "</u>"
+      d += "<u class='description-opponent'>" + self.opponent_list[0] + "</u>"
     end
     unless self.lane_list[0] == "None"
       d += " in the "

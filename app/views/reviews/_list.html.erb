@@ -1,0 +1,21 @@
+<ul class="media-list" id="review-list">
+<% if @reviews.length > 0 %>
+	<% @reviews.each do |r| %>
+		<li class='media review'>
+			<div class='review-rating pull-left'>
+				<%= render "reviews/rating", :r => r %>
+			</div>
+			<div class="review-content">
+				<div class="review-info">
+					<%= render "reviews/info", :r => r %>	
+				</div>
+				<div class="review-body">
+					<%= render "reviews/body", :r => r %>
+				</div>
+				<div class="review-flags">
+					<%= render "reviews/flags", :r => r %>
+				</div>
+			</div>
+		</li>
+	<% end %>
+<% end %>

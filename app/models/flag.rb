@@ -2,6 +2,7 @@ class Flag < ActiveRecord::Base
   attr_accessible :body, :rawtime, :review_id, :time, :user_id
 
   belongs_to :review
+  belongs_to :user
 
   # Converts raw input of time (string) into seconds (integer)
   def convert_to_seconds()

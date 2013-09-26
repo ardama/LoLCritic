@@ -1,3 +1,94 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import "colors";
+.review {
+	margin-top: 0px;
+	//margin-bottom: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.review .review-rating {
+	width:40px;
+	height: 100%;
+	text-align: center;
+	margin-right: 0px;
+	color: $ThemeLightGray;
+}
+.review .review-rating .postive-rating {
+	color: $ThemeBlue1;
+}
+.review-rating .upvote-container {
+	width: 40px;
+	height: 20px;
+}
+.review-rating .rating-container {
+	width: 40px;
+	height: 20px;
+	font-weight: bold;
+	font-size: 12pt;
+}
+.review-rating .downvote-container {
+	width: 40px;
+	height: 20px;
+}
+.review-content {
+	overflow: hidden;
+	padding-left:15px;
+	padding-bottom: 10px;
+	box-shadow:  1px 1px 1px -1px $ThemeBlue1;
+
+}
+.review-info {
+	margin-left: -10px;
+}
+.review-info .review-user {
+	color: $ThemeBlue1;
+	font-weight: bold;
+	width: 100%
+}
+.review-info .review-time {
+	color: $ThemeDarkGray1;
+	font-size: 10pt;
+}
+.review-body {
+	width: 100%;
+	border-left: 3px solid $ThemeBlue2;
+	padding-left: 7px;
+	margin-top: 5px;
+}
+.review-flags {
+	width: 100%;
+	margin-top: 8px;
+	margin-left: -10px;
+}
+.review-flags .review-flag {
+	width: 100%;
+	margin-top: 5px;
+}
+.review-flags .review-flag .btn {
+	border: none;
+	box-shadow: none;
+	margin-top: -2px;
+}
+.review-flags .review-flag .review-flag-time {
+	color: $ThemeBlue1;
+	font-weight: bold;
+}
+.review-flags .review-flag .review-flag-body {
+
+}
+
+.vote-icon {
+	color: $ThemeLightGray;
+}
+.vote-icon:hover {
+	color: $ThemeBlue2;
+	text-decoration: none;
+}
+.voted {
+	color: $ThemeBlue1;
+}
+

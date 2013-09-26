@@ -3,6 +3,7 @@
 @import "colors";
 body {
 	font-family: "Open Sans";
+	background-image: url("debut_light.png");
 }
 label,
 input,
@@ -31,6 +32,9 @@ NAVBAR OVERRIDES
 .navbar-fixed-top {
 	position: fixed;
 	height: 40px;
+}
+.navbar .brand {
+	margin-left:0px;
 }
 
 .navbar-fixed-top .navbar-inner {
@@ -148,8 +152,9 @@ BUTTON OVERRIDES
 .btn {
 	border-radius: 0px;
 	background-image: none;
-	border-color: $ThemeLightGray;
+	//border-color: $ThemeLightGray;
 	background-color: #eee;
+	font-size: 10pt;
 }
 .btn:hover {
 	background-color: #ddd;
@@ -171,9 +176,19 @@ BUTTON OVERRIDES
 	background-color: $ThemeBlue1;
 	background-image: none;
 }
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
 	background-color: $ThemeBlue2;
 }
-.btn-primary:active {
-	background-color: $ThemeBlue1;
+.btn-success {
+	background-color: $ThemeDarkGray1;
+	background-image: none;
+	color: $ThemeWhite;
 }
+.btn-success:hover, 
+.btn-success:active, 
+.btn-success:focus {
+	background-color: $ThemeDarkGray2;
+}
+
