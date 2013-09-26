@@ -17,6 +17,18 @@
 						<%= image_tag video.generate_thumbnail %>
 					</div>
 					</a>
+					<div class="pull-left">
+						<% unless video.get_champion() == "None" %>
+							<div>
+								<td><%= image_tag video.champion_image, :size => "42x42", :class => "champion-image", :title => video.get_champion %></td>
+							</div>
+						<% end %>
+						<% unless video.get_opponent() == "None" %>
+							<div>
+								<td><%= image_tag video.opponent_image, :size => "42x42", :class => "opponent-image", :title => video.get_opponent %></td>
+							</div>
+						<% end %>
+					</div>
 					<div class="media-body video-listing-info">
 						<div class="video-listing-header">
 							<a href="<%= video_path(video) %>" class="video-listing-title">
@@ -32,12 +44,7 @@
 							<div class="video-listing-tags">
 								<table>
 									<tr>
-										<% unless video.get_champion() == "None" %>
-											<td><%= image_tag video.champion_image, :size => "53x53", :class => "champion-image", :title => video.get_champion %></td>
-										<% end %>
-										<% unless video.get_opponent() == "None" %>
-											<td><%= image_tag video.opponent_image, :size => "53x53", :class => "opponent-image", :title => video.get_opponent %></td>
-										<% end %>
+									
 										<td>
 											<div class="video-listing-description">
 												<%= raw(video.generate_description) %>
