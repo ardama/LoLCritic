@@ -6,7 +6,7 @@ class VideosController < ApplicationController
   	@video = Video.find(params[:id])
   	@owner = User.find(@video.user_id)
   	@review = Review.new
-  	@reviews = @video.reviews.order("rating desc").page(params[:page]).per(8)
+  	@reviews = @video.reviews.order("rating desc").page(params[:page]).per(20)
 		@path = @video.generate_path
 
 		@ratings = current_user.ratings

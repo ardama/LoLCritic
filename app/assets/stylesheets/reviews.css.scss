@@ -47,7 +47,7 @@
 .review-info .review-user {
 	color: $ThemeBlue1;
 	font-weight: bold;
-	width: 100%
+	width: 100%;
 }
 .review-info .review-time {
 	color: $ThemeLightGray;
@@ -55,26 +55,13 @@
 }
 .review-body {
 	width: 100%;
-//	border-left: 3px solid $ThemeBlue2;
-//	padding-left: 7px;
-//	margin-top: 5px;
+	word-wrap: break-word;
 }
 .review-flags {
 	width: 100%;
 	margin-top: 8px;
 //	margin-left: -10px;
 }
-.review-flags .btn-custom {
-	background-color: $ThemeLightGray;
-	text-shadow: none;
-	color: white;
-}
-
-.review-flags .btn-custom:hover {
-	background-color: $ThemeDarkGray1;
-	color: white;
-}
-
 .review-flags .review-flag {
 	width: 100%;
 	margin-top: 5px;
@@ -89,7 +76,7 @@
 	font-weight: bold;
 }
 .review-flags .review-flag .review-flag-body {
-
+	word-wrap: break-word;
 }
 
 .vote-icon {

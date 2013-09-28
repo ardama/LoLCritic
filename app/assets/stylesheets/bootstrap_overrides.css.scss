@@ -194,13 +194,13 @@ BUTTON OVERRIDES
 .btn-success:focus {
 	background-color: $ThemeDarkGray2;
 }
-.review-flags .btn-custom {
+.btn-custom {
 	background-color: $ThemeLightGray;
 	text-shadow: none;
 	color: white;
 }
-.review-flags .btn-custom:hover {
-	background-color: $ThemeDarkGray1;
+.btn-custom:hover {
+	background-color: $ThemeGray;
 	color: white;
 }
 .btn-large {
