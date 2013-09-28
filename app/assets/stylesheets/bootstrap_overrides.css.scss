@@ -3,7 +3,8 @@
 @import "colors";
 body {
 	font-family: "Open Sans";
-	background-image: url("debut_light.png");
+	background-color: $ThemeWhite;
+	//background-image: url("debut_light.png");
 }
 label,
 input,
@@ -16,6 +17,8 @@ textarea {
 a {
 	color: $ThemeBlue2;
 }
+
+
 
 /**
 NAVBAR OVERRIDES
@@ -196,8 +199,12 @@ BUTTON OVERRIDES
 	text-shadow: none;
 	color: white;
 }
-
 .review-flags .btn-custom:hover {
 	background-color: $ThemeDarkGray1;
 	color: white;
 }
+.btn-large {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+

@@ -13,9 +13,9 @@
 </div>
 <div class="pull-left rating-container">
 	<% if r.rating && r.rating >= 0 %>
-		<text id="review-rating-<%= r.id.to_s %>" class='review-rating-value pos'>
+		<text id="review-rating-<%= r.id.to_s %>" class='review-rating-value positive-rating'>
 	<% else %>
-		<text id="review-rating-<%= r.id.to_s %>" class='review-rating-value neg'>
+		<text id="review-rating-<%= r.id.to_s %>" class='review-rating-value negative-rating'>
 	<% end %>
 		<%= r.rating %>
 	</text>
