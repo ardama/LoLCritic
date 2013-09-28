@@ -3,7 +3,7 @@
 @import "colors";
 body {
 	font-family: "Open Sans";
-	background-image: url("debut_light.png");
+	//background-image: url("debut_light.png");
 }
 label,
 input,
@@ -16,6 +16,15 @@ textarea {
 a {
 	color: $ThemeBlue2;
 }
+label:focus,
+input:focus,
+button:focus,
+select:focus,
+textarea:focus {
+
+box-shadow:none;
+}
+
 
 /**
 NAVBAR OVERRIDES

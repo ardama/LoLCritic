@@ -36,13 +36,13 @@
 }
 .review-content {
 	overflow: hidden;
-	padding-left:15px;
+//	padding-left:15px;
 	padding-bottom: 10px;
 	box-shadow:  1px 1px 1px -1px $ThemeBlue1;
 
 }
 .review-info {
-	margin-left: -10px;
+//	margin-left: -10px;
 }
 .review-info .review-user {
 	color: $ThemeBlue1;
@@ -50,19 +50,19 @@
 	width: 100%
 }
 .review-info .review-time {
-	color: $ThemeDarkGray1;
+	color: $ThemeLightGray;
 	font-size: 10pt;
 }
 .review-body {
 	width: 100%;
-	border-left: 3px solid $ThemeBlue2;
-	padding-left: 7px;
-	margin-top: 5px;
+//	border-left: 3px solid $ThemeBlue2;
+//	padding-left: 7px;
+//	margin-top: 5px;
 }
 .review-flags {
 	width: 100%;
 	margin-top: 8px;
-	margin-left: -10px;
+//	margin-left: -10px;
 }
 .review-flags .review-flag {
 	width: 100%;
