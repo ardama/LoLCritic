@@ -199,8 +199,10 @@ BUTTON OVERRIDES
 	text-shadow: none;
 	color: white;
 }
+.btn-custom:active, 
+.btn-custom:focus,
 .btn-custom:hover {
-	background-color: $ThemeGray;
+	background-color: $ThemeGray2;
 	color: white;
 }
 .btn-large {

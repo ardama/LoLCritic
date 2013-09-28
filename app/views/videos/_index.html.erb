@@ -18,9 +18,7 @@
 					
 					<div class="media-body video-listing-info">
 						<div id="image-container" class="pull-left">
-							<% unless video.get_champion() == "None" %>
 							<%= image_tag video.champion_image, :size => "51x51", :class => "champion-image", :title => video.get_champion %>
-							<% end %>
 							<%= image_tag video.opponent_image, :size => "51x51", :class => "opponent-image", :title => video.get_opponent %>
 						</div>
 
