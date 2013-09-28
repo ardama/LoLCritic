@@ -64,6 +64,17 @@
 	margin-top: 8px;
 	margin-left: -10px;
 }
+.review-flags .btn-custom {
+	background-color: $ThemeLightGray;
+	text-shadow: none;
+	color: white;
+}
+
+.review-flags .btn-custom:hover {
+	background-color: $ThemeDarkGray1;
+	color: white;
+}
+
 .review-flags .review-flag {
 	width: 100%;
 	margin-top: 5px;

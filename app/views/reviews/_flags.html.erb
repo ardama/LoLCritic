@@ -1,7 +1,7 @@
 <% if r.flags.length > 0 %>
 	<% r.flags.each do |f| %>
 		<div class="review-flag">
-			<a class="btn btn-success btn-mini" href="#"><b>+</b> <i class='icon-flag icon-white'></i></a>
+			<a class="btn btn-custom btn-mini" href="#"><b>+</b> <i class='icon-flag icon-white'></i></a>
 			<text class="review-flag-time"><%= f.rawtime %></text>
 			<text class="review-flag-body"><%= f.body %></text>
 		</div>
