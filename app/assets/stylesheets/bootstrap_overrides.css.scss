@@ -3,6 +3,7 @@
 @import "colors";
 body {
 	font-family: "Open Sans";
+	background-color: $ThemeWhite;
 	//background-image: url("debut_light.png");
 }
 label,
@@ -16,14 +17,7 @@ textarea {
 a {
 	color: $ThemeBlue2;
 }
-label:focus,
-input:focus,
-button:focus,
-select:focus,
-textarea:focus {
 
-box-shadow:none;
-}
 
 
 /**
@@ -199,5 +193,10 @@ BUTTON OVERRIDES
 .btn-success:active, 
 .btn-success:focus {
 	background-color: $ThemeDarkGray2;
+}
+
+.btn-large {
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
