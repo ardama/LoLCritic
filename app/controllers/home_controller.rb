@@ -38,13 +38,37 @@ class HomeController < ApplicationController
 	end
 
   # TODO: Extend functionality to nearest match if no exact matches are found
-  # TODO: Accommodate when not all parameters are selected
   def filter_by_tags
 
-    filter_tags = [params[:lane]]
-    filter_tags += params[:position] + params[:focus]
+    if !params[:position]
+      params[:position] = []
+    end
 
-    @videos = Video.tagged_with([params[:champion]], :on => :champion).tagged_with([params[:opponent]], :on => :opponent).tagged_with(filter_tags)
+    if !params[:focus]
+      params[:focus] = []
+    end
+
+    filter_tags = [params[:lane]] + params[:position] + params[:focus]
+    exclusion = [false, false, false]
+
+    if params[:champion] == "None"
+      exclusion[0] = true
+    end
+    if params[:opponent] == "None"
+      exclusion[1] = true
+    end
+    if params[:lane] == "None"
+      if filter_tags == ["None"]
+        exclusion[2] = true
+      else
+        filter_tags = params[:position] + params[:focus]
+      end
+    end
+
+    @videos = Video.tagged_with([params[:champion]], :on => :champion, :exclude => exclusion[0]) \
+      .tagged_with([params[:opponent]], :on => :opponent, :exclude => exclusion[1]) \
+      .tagged_with(filter_tags, :exclude => exclusion[2])
+
     respond_to do |format|
       format.js
     end
