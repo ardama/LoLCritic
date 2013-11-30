@@ -153,7 +153,7 @@ BUTTON OVERRIDES
 **/
 
 .btn {
-	border-radius: 0px;
+	border-radius: 3px;
 	background-image: none;
 	//border-color: $ThemeLightGray;
 	background-color: #eee;
@@ -215,6 +215,9 @@ ACCORDION OVERRIDES
 **/
 .accordion-heading .accordion-toggle {
 	padding-left: 0px;
+}
+.accordion-inner {
+	border-top-color: #ccc;
 }
 
 /**

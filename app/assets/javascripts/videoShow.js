@@ -22,6 +22,12 @@ function updateStreamContainer() {
 	$(".flag").each(function(index) {
 		var time = getTime(this);
 		var videoTime = player.getCurrentTime();
+		var diff = videoTime - time;
+		if (diff > 0 && diff < 10) {
+			$(this).addClass('active');
+		} else {
+			$(this).removeClass('active');
+		}
 	});
 }
 

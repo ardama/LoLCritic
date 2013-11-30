@@ -2,12 +2,14 @@
 <div id="flags">
 	<% @flags.each do |f| %>
 		<div class="flag" id="flag-<%=f.id%>" onclick="flagClick(<%=f.time%>,<%=f.id%>)">
-			<div class="flag-info">
-				<div class="flag-minute">
+			<div class="flag-info pull-left">
+				<div class="flag-minute pull-left">
 					<%= f.minute %>
 				</div>
-				:
-				<div class="flag-second">
+				<div class="pull-left">
+				 : 
+				</div>
+				<div class="flag-second pull-left">
 					<%= f.second %>
 				</div>
 				| <%= User.find(f.user_id).email %>

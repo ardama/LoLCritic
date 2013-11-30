@@ -209,9 +209,14 @@ u.description-opponent {
 	border-top-color: $ThemeBlue2;
 }
 .flag-info {
-	padding: 5px 10px 2px 10px;
+	padding: 5px 0px 2px 0px;
 	color: $ThemeLightGray;
+	width: 100%;
 }
+.flag-minute {
+	padding-left: 10px;
+}
+
 
 .flag-content {
 	padding: 0px 10px 8px 10px;
