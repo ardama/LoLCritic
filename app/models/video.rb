@@ -6,7 +6,6 @@ class Video < ActiveRecord::Base
 
   acts_as_taggable_on :champion, :opponent, :lane, :position, :focus
 
-
   def extract_id()
   	match = self.link.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/)
   	if match && match[7].length==11
@@ -14,6 +13,34 @@ class Video < ActiveRecord::Base
   	else
   		return 'NPdw1BOzFmE'
   	end
+  end
+
+  def vid_init(params)
+
+    # Basic Attributes
+		self.title = params[:video][:title]
+		self.link = params[:video][:link]
+		self.user_id = params[:video][:user_id]
+
+		# Tagging Attributes
+		self.champion_list.add(params[:video][:champion])
+		self.opponent_list.add(params[:video][:opponent])
+		self.lane_list.add(params[:video][:lane])
+		params[:video][:position].each do |p|
+			self.position_list.add(p)
+		end
+		if params[:video][:focus].length > 1
+			params[:video][:focus].each do |f|
+				self.focu_list.add(f)
+			end
+		else
+			self.focu_list = "None"
+		end
+
+		self.num_ratings = 0
+		self.rating = 0
+		self.total_rating = 0
+
   end
 
   def self.search(phrase)

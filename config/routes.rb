@@ -3,6 +3,7 @@ LoLCritic::Application.routes.draw do
   root :to => 'home#index'
   get 'account' => 'home#account', :as => 'account_page'
   get 'help' => 'home#help', :as => 'help_page'
+  get 'filter_by' => 'home#filter_by_tags', :as => 'filter'
 
   authenticated :user do
     root :to => 'videos#index'
