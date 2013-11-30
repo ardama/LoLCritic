@@ -42,12 +42,20 @@ function onYouTubeIframeAPIReady() {
 	setSize();
 };
 
+
+
 window.onresize = function () {	
 	setSize();
 }
+
+
 $(document).ready(function() {
 	$("#wysi-textarea").width($("#video-container").width() - 32);
 	$('#wysi-textarea').wysihtml5();
+
+	window.setInterval(function(){
+		updateStreamContainer();
+	}, 1000);
 });
 
 </script>

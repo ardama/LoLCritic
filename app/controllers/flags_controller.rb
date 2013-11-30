@@ -3,7 +3,9 @@ class FlagsController < ApplicationController
 		flag = Flag.find(params[:id])
 		@flags = []
 		if flag
-			(session[:flags] ||= []) << flag.id
+			if !(session[:flags].include? flag.id)
+				(session[:flags] ||= []) << flag.id
+			end
 			session[:flags].each do |f|
 				@flags << Flag.find(f)
 			end

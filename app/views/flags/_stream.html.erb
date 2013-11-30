@@ -3,7 +3,14 @@
 	<% @flags.each do |f| %>
 		<div class="flag" id="flag-<%=f.id%>" onclick="flagClick(<%=f.time%>,<%=f.id%>)">
 			<div class="flag-info">
-				<%= f.minute %>:<%= f.second %> | <%= User.find(f.user_id).email %>
+				<div class="flag-minute">
+					<%= f.minute %>
+				</div>
+				:
+				<div class="flag-second">
+					<%= f.second %>
+				</div>
+				| <%= User.find(f.user_id).email %>
 			</div>
 			<div class="flag-content">
 				<%= f.body.html_safe %>

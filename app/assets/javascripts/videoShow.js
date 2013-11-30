@@ -18,7 +18,25 @@ function flagClick(time, index) {
 	player.seekTo(time);
 };
 
+function updateStreamContainer() {
+	$(".flag").each(function(index) {
+		var time = getTime(this);
+		var videoTime = player.getCurrentTime();
+	});
+}
 
+function getTime(flag) {
+	var time = 0
+	var minute = parseInt($(flag).find(".flag-minute").html().trim());
+	var second = parseInt($(flag).find(".flag-second").html().trim());
+	if (minute) {
+		time += 60 * minute;
+	}
+	if (second) {
+		time += second;
+	}
+	return time;
+}
 
 function commentShowToggle(index) {
 	var element = "#comment-show-toggle-" + index;
