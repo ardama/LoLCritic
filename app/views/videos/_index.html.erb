@@ -38,7 +38,10 @@
 									<%= raw(video.generate_description) %>
 								</div>
 								<div class="video-listing-focus">
-									<u>Tags:</u> <%= video.focu_list %>
+                  <u>Tags:</u>
+                  <% video.focu_list.each do |focus| %>
+                    <%= link_to focus, root_path(:filter=>focus) %>
+                  <% end %>
 								</div>
 							</div>
 						</div>

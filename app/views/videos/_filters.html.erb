@@ -4,7 +4,7 @@
 	</p>
 </div>
 <div id="filters" style="">
-	<%= form_tag do %>
+	<%= form_tag(filter_path, method: :get, remote: true) do %>
 		<p>Champion</p>
 	  <%= select_tag(:champion, options_for_select({"" => "None"}),{:class => "filter chosen-single"})%>
 		<p>Opponent</p>
