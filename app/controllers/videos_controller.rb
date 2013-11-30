@@ -6,9 +6,12 @@ class VideosController < ApplicationController
   	@video = Video.find(params[:id])
   	@owner = User.find(@video.user_id)
   	@review = Review.new
+  	@comment = Comment.new
   	@reviews = @video.reviews.order("rating desc").page(params[:page]).per(20)
 		@path = @video.generate_path
 
+		session[:flags] = []
+		@flags = []
 		@ratings = current_user.ratings
 		@review_ratings = {}
 		@comment_ratings = {}

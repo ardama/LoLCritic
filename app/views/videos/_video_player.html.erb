@@ -11,14 +11,17 @@ var player;
 function setSize() {
 	var width = $("#video-container").width();
 	var height = width * 9.0/16.0 + 30;
-	
+
 	if(player)
 		player.setSize(width,height);
 
-	$("#flag-container").height(height);
+	$("#flag-container").height(height - 40);
+	$("#flag-stream-container").height(height - 40);
 	$("#flags").height(height - 40);
 	$("#wysi-textarea").width(width - 32);
-  $('.flag-body').css('width', width - 181 + "px");
+  $('.flag-body').css('width', width - 194 + "px");
+
+  $('.comment-form-textarea').css('width', $('.review-comments').width()-14 + "px");
 
 }
 function onYouTubeIframeAPIReady() {
@@ -45,7 +48,6 @@ window.onresize = function () {
 $(document).ready(function() {
 	$("#wysi-textarea").width($("#video-container").width() - 32);
 	$('#wysi-textarea').wysihtml5();
-	$('#wysi-container').collapse();
 });
 
 </script>

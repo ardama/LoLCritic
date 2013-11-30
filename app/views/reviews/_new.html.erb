@@ -1,13 +1,19 @@
 <%= form_for @review do |r| %>
-  <div id="wysi-container" class="accordion-body">
-    <%= r.text_area :body, :id=>"wysi-textarea", :class=>"accordion-inner", :placeholder=>"Write your review", :style=>"height: 200px" %>
-    <%= hidden_field_tag :video_id, @video.id %>
+    <div class="accordion-heading">
+      <a class="accordion-toggle review-accordion-toggle" data-toggle="collapse" href="#wysi-container">
+        Hide Review
+      </a>
+    </div>
+	  <div id="wysi-container" class="accordion-body collapse in">
+	    <%= r.text_area :body, :id=>"wysi-textarea", :class=>"accordion-inner", :placeholder=>"Write your review", :style=>"height: 150px" %>
+	    <%= hidden_field_tag :video_id, @video.id %>
 
 
-  	  	<div id="flags-new-container">
-    	</div>
-  	  <%= link_to_add_fields raw("<b>+</b> <i class='icon-flag icon-white'></i>"), r,:flags, "btn btn-success"%>
+	  	  	<div id="flags-new-container">
+	    	</div>
+	  	  <%= link_to_add_fields raw("<b>+</b> <i class='icon-flag icon-white'></i>"), r,:flags, "btn btn-success"%>
 
-    <%= r.submit "Submit", :class => "btn btn-primary"%>
-  </div>
+	    <%= r.submit "Submit", :class => "btn btn-primary"%>
+	  </div>
+
 <% end %>

@@ -1,0 +1,9 @@
+  <%= form_for @comment do |c| %>
+    <div id="comment-textarea-<%= r.id.to_s%>" class="collapse pull-right" style="width:100%">
+    	<div class="comment-accordion" id="comment-accordion-textarea">
+     	<%= c.text_area :body, :placeholder=>"Write your reply", :class => 'comment-form-textarea'%>
+    	<%= hidden_field_tag :review_id, r.id %>
+    	<%= c.submit "Submit", :class => 'btn btn-primary'%>
+    	</div>
+    </div>
+  <% end %>

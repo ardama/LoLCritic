@@ -79,6 +79,7 @@
 .video-listing-upload {
 	font-size: 10pt;
 	line-height: 16px;
+	color: $ThemeGray2;
 }
 .video-listing-body {
 	height:60px;
@@ -163,10 +164,15 @@ u.description-opponent {
 
 
 /* FLAG STREAM */
+#flag-stream-container {
+	height: 100%;
+	overflow-y: auto;
+}
 #flag-container {
 	margin-top: 40px;
 	background-color: $ThemeDarkGray1;
 	margin-left: 0px;
+	padding-bottom: 40px;
 }
 #flag-stream-header {
 	height: 40px;
@@ -181,9 +187,7 @@ u.description-opponent {
 	padding-left: 15px;
 }
 #flags {
-	padding-bottom: -40px;
 	height:100%;
-	overflow-y:auto;
 }
 .flag {
 	color:$ThemeWhite;
@@ -219,7 +223,7 @@ u.description-opponent {
 }
 
 ul.wysihtml5-toolbar {
-	margin: 10px 0px;
+	margin: 0px 0px 10px 0px;
 }
 ul.wysihtml5-toolbar li {
 	background-color: $ThemeWhite;
@@ -231,6 +235,13 @@ ul.wysihtml5-toolbar li:last-child {
 ul.wysihtml5-toolbar .btn {
 }
 ul.wysihtml5-toolbar .li:hover {
+}
+
+#wysi-container {
+	margin-bottom: 0px;
+}
+#wysi-container.collapse.in {
+	margin-bottom: 20px;
 }
 .flag-body {
 	width: 450px;
@@ -248,9 +259,10 @@ ul.wysihtml5-toolbar .li:hover {
 }
 
 .flag-time {
-	width:35px;
+	width:15px;
 	margin-right: 5px;
 }
 .flag-form .input-prepend input {
 	font-size: 10pt;
 }
+

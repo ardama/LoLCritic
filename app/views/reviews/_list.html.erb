@@ -15,6 +15,19 @@
 				<div class="review-flags">
 					<%= render "reviews/flags", :r => r %>
 				</div>
+				<div class="review-comments pull-right">
+					<div id="comment-list-<%= r.id.to_s%>" class="comment-list">
+						<% r.comments.each do |c| %>
+							<%= render "comments/show", :c => c %>
+						<% end %>
+					</div>				
+					<div class="comment-form">
+						<%= render "comments/new", :r => r %>
+					</div>
+				</div>	
+				<div class="comment-header pull-right">
+					<%= render "comments/header", :r => r %>
+				</div>	
 			</div>
 		</li>
 	<% end %>

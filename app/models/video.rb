@@ -71,7 +71,7 @@ class Video < ActiveRecord::Base
       unit = " day"
     end
     diff = diff.round.to_s
-    if diff == "1"
+    if diff != "1"
       unit += "s"
     end
     return diff + unit + " ago"

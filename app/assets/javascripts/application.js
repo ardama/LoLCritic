@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require_tree .
 
 
@@ -25,5 +26,5 @@ function add_fields(link, association, content) {
     var regexp = new RegExp("new_" + association, "g")
 	var width = $("#video-container").width();
     $('#flags-new-container').append(content.replace(regexp, new_id));   
-    $('.flag-body').css('width',width - 181 + "px");
+    $('.flag-body').css('width',width - 194 + "px");
 }

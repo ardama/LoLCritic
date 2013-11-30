@@ -27,6 +27,10 @@ LoLCritic::Application.routes.draw do
     end
   end
 
-  resources :flags
+  resources :flags do
+    member do
+      get 'add'
+    end
+  end
 
 end

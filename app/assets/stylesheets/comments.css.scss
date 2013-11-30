@@ -1,3 +1,45 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "colors";
+.review-comments {
+	width: 90%;
+}
+.comment-show-toggle {
+}
+.comment-form-toggle {
+	padding-right: 10px;
+}
+.comment-header {
+	font-size: 10pt;
+	width: 100%;
+}
+.comment-form {
+	width: 100%;
+}
+.comment-list {
+	width: 100%;
+}
+
+.comment-user {
+	color: $ThemeBlue1;
+	font-weight: bold;
+	width: 100%;
+}
+.comment-time {
+	color: $ThemeLightGray;
+	font-size: 10pt;
+}
+.comment-body {
+	width: 100%;
+}
+.comment-accordion {
+	margin-bottom: 5px;
+}
+.comment-form-textarea {
+	height:50px;
+	resize: none;
+	margin-bottom: 5px;
+	margin-top: 8px;
+}

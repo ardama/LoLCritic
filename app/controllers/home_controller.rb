@@ -26,7 +26,6 @@ class HomeController < ApplicationController
 
 	def account
 	    @videos = current_user.videos.page(params[:page]).per(8)
-	    @review_ratings = filter_ratings("review")
 	end
 	
 end

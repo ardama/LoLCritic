@@ -1,0 +1,5 @@
+<div class="comment-info">
+	<text class="comment-user"><%= User.find(c.user_id).email %></text>
+	<text class="comment-time"><%= c.generate_time() %></text>
+</div>
+<text class="comment-body"><%= c.body %></text>
