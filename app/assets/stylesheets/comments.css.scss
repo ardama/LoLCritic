@@ -4,7 +4,44 @@
 
 @import "colors";
 .review-comments {
-	width: 90%;
+	width: 100%;
+}
+.comment {
+	min-height: 40px;
+	margin-left: 40px;
+}
+.comment .comment-rating {
+	width:30px;
+	height: 100%;
+	text-align: center;
+	margin-right: 0px;
+	color: $ThemeLightGray;
+	margin-right: 10px;
+}
+.comment .comment-rating .postive-rating {
+	color: $ThemeBlue1;
+}
+.comment-rating .vote-container {
+	height: 40px;
+	width: 15px;
+}
+.comment-rating .upvote-container {
+	width: 15px;
+	height: 20px;
+}
+.comment-rating .downvote-container {
+	width: 15px;
+	height: 20px;
+}
+.comment-rating .rating-container {
+	width: 15px;
+	height: 40px;
+	font-weight: bold;
+	font-size: 12pt;
+	vertical-align: middle;
+}
+.comment-rating .comment-rating-value {
+	line-height: 40px;
 }
 .comment-show-toggle {
 }
@@ -17,6 +54,7 @@
 }
 .comment-form {
 	width: 100%;
+	margin-left: 40px;
 }
 .comment-list {
 	width: 100%;

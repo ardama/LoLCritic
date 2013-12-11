@@ -27,9 +27,15 @@ class Comment < ActiveRecord::Base
     elsif diff < 86400
       diff = diff / 3600
       unit = " hour"
-    else
+    elsif diff < 2592000
       diff = diff / 86400
       unit = " day"
+    elsif diff < 31104000
+      diff = diff / 2592000
+      unit = " month"
+    else
+      diff = diff / 31104000
+      unit = " year"
     end
     diff = diff.round.to_s
     if diff != "1"

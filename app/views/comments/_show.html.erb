@@ -1,5 +1,10 @@
-<div class="comment-info">
-	<text class="comment-user"><%= User.find(c.user_id).email %></text>
-	<text class="comment-time"><%= c.generate_time() %></text>
+<div class="comment">
+	<div class="comment-rating pull-left">
+		<%= render "comments/rating", :c => c %>
+	</div>
+	<div class="comment-info">
+		<text class="comment-user"><%= User.find(c.user_id).email %></text>
+		<text class="comment-time"><%= c.generate_time() %></text>
+	</div>
+	<text class="comment-body"><%= c.body %></text>
 </div>
-<text class="comment-body"><%= c.body %></text>

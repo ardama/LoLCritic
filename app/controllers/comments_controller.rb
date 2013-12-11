@@ -9,6 +9,9 @@ class CommentsController < ApplicationController
 		comment = review.comments.create(params[:comment])
 		comment.set_user_id(current_user.id)
 
+		comment.rating = 0;
+    	comment.save
+
 		user = review.user
 		notification = user.notifications.create(
 			:target_type => "comment", 

@@ -1,0 +1,27 @@
+<% upvote_icon = "<i class='icon-chevron-up vote-icon' id='comment-upvote-" + c.id.to_s + "'></i>" %>
+<% downvote_icon = "<i class='icon-chevron-down vote-icon' id='comment-downvote-" + c.id.to_s + "'></i>" %>
+<% if @comment_ratings[c.id] && @comment_ratings[c.id] > 0 %>
+	<% upvote_icon = "<i class='icon-chevron-up vote-icon voted' id='comment-upvote-" + c.id.to_s + "'></i>" %>
+<% end %>
+
+<% if @comment_ratings[c.id] && @comment_ratings[c.id] < 0 %>
+	<% downvote_icon = "<i class='icon-chevron-down vote-icon voted' id='comment-downvote-" + c.id.to_s + "'></i>" %>
+<% end %>
+<div class="pull-left rating-container">
+	<% if c.rating && c.rating >= 0 %>
+		<text id="comment-rating-<%= c.id.to_s %>" class='comment-rating-value positive-rating'>
+	<% else %>
+		<text id="comment-rating-<%= c.id.to_s %>" class='comment-rating-value negative-rating'>
+	<% end %>
+		<%= c.rating %>
+	</text>
+</div>
+<div class="vote-container pull-left">
+	<div class="upvote-container">
+		<%= link_to raw(upvote_icon), upvote_comment_path(:id => c.id), :remote => true, :method => "post" %>
+	</div>
+
+	<div class="downvote-container">
+		<%= link_to raw(downvote_icon), downvote_comment_path(:id => c.id), :remote => true, :method => "post" %>
+	</div>
+</div>
