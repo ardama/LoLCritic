@@ -2,7 +2,7 @@
 //@import "bootstrap-responsive";
 @import "colors";
 body {
-	font-family: "Open Sans";
+	//font-family: "Open Sans";
 	background-color: $ThemeWhite;
 	//background-image: url("debut_light.png");
 }
@@ -11,10 +11,14 @@ input,
 button,
 select,
 textarea {
-	font-family: "Open Sans";
+	//font-family: "Open Sans";
 }
 
 a {
+	color: $ThemeBlue2;
+}
+a:hover,
+a:focus {
 	color: $ThemeBlue2;
 }
 
@@ -155,26 +159,28 @@ BUTTON OVERRIDES
 .btn {
 	border-radius: 3px;
 	background-image: none;
-	//border-color: $ThemeLightGray;
+	box-shadow: none;
 	background-color: #eee;
-	font-size: 10pt;
+	font-size: 14px;
+	text-shadow: none;
 }
 .btn:hover {
 	background-color: #ddd;
 }
 .btn-group .btn:last-child {
-	border-radius: 0px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
 }
 .btn-group .btn:first-child {
-	border-radius: 0px;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
 }
-.btn-inverse {
-	background-color: #363636;
-	background-image:none;
+.btn-large {
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
-.btn-inverse:hover {
-	background-color: #222222;
-}
+
+// BUTTON TYPES
 .btn-primary {
 	background-color: $ThemeBlue1;
 	background-image: none;
@@ -184,6 +190,36 @@ BUTTON OVERRIDES
 .btn-primary:active {
 	background-color: $ThemeBlue2;
 }
+
+.btn-secondary {
+//	background-color: $ThemeDarkGray1;
+//	color: $ThemeWhite;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active {
+//	background-color: $ThemeGray;
+//	color: $ThemeWhite;
+}
+
+
+
+
+
+
+
+
+
+
+.btn-inverse {
+	background-color: #363636;
+	background-image:none;
+}
+.btn-inverse:hover {
+	background-color: #222222;
+}
+
 .btn-success {
 	background-color: $ThemeDarkGray1;
 	background-image: none;
@@ -205,10 +241,7 @@ BUTTON OVERRIDES
 	background-color: $ThemeGray2;
 	color: white;
 }
-.btn-large {
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
+
 
 /**
 ACCORDION OVERRIDES

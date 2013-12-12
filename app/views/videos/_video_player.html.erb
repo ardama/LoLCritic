@@ -11,6 +11,7 @@ var player;
 function setSize() {
 	var width = $("#video-container").width();
 	var height = width * 9.0/16.0 + 30;
+  	setFlagSize(width);
 
 	if(player)
 		player.setSize(width,height);
@@ -19,11 +20,14 @@ function setSize() {
 	$("#flag-stream-container").height(height - 40);
 	$("#flags").height(height - 40);
 	$("#wysi-textarea").width(width - 32);
-  $('.flag-body').css('width', width - 194 + "px");
 
-  $('.comment-form-textarea').css('width', $('.review-comments').width()-54 + "px");
-
+  	$('.comment-form-textarea').css('width', $('.review-comments').width()-54 + "px");
 }
+
+function setFlagSize(width) {
+	$('.flag-body').css('width', width - 161 + "px");
+}
+
 function onYouTubeIframeAPIReady() {
 	player = new YT.Player('video-player', {
 	  width: 0,
@@ -50,12 +54,20 @@ window.onresize = function () {
 
 
 $(document).ready(function() {
-	$("#wysi-textarea").width($("#video-container").width() - 32);
+	$('#wysi-textarea').width($('#video-container').width() - 32);
 	$('#wysi-textarea').wysihtml5();
 
 	window.setInterval(function(){
+		//videoShow.js
 		updateStreamContainer();
 	}, 1000);
+
+	$('#add-flag-btn').click(function() {
+		setTimeout(function() {	
+			var width = $("#video-container").width();
+			setFlagSize(width);
+		}, 10);
+	});
 });
 
 </script>

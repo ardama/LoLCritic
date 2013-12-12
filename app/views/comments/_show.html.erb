@@ -1,10 +1,18 @@
-<div class="comment">
-	<div class="comment-rating pull-left">
-		<%= render "comments/rating", :c => c %>
+<% count = 0 %>
+<% r.comments.each do |c| %>
+	<% if count < 4 %>
+		<div class="comment">
+	<% else %>
+		<div class="comment comment-hidden">
+	<% end %>
+		<div class="comment-rating pull-left">
+			<%= render "comments/rating", :c => c %>
+		</div>
+		<div class="comment-info">
+			<text class="comment-user"><%= User.find(c.user_id).email %></text>
+			<text class="comment-time"><%= c.generate_time() %></text>
+		</div>
+		<text class="comment-body"><%= c.body %></text>
 	</div>
-	<div class="comment-info">
-		<text class="comment-user"><%= User.find(c.user_id).email %></text>
-		<text class="comment-time"><%= c.generate_time() %></text>
-	</div>
-	<text class="comment-body"><%= c.body %></text>
-</div>
+	<% count += 1 %>
+<% end %>

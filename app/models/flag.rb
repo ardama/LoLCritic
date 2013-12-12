@@ -18,12 +18,34 @@ class Flag < ActiveRecord::Base
     total = 0
     if self.minute
       total += 60 * self.minute
+    else
+      self.minute = 0
+      self.save
     end
     if self.second
       total += self.second
+    else
+      self.second = 0
+      self.save
     end
     self.time = total
     self.save
+  end
+
+  def get_time_string()
+    time = ""
+    if self.minute
+      time += minute.to_s
+    else
+      time += "0"
+    end
+    time += ":"
+    if self.second && self.second != 0
+      time += self.second.to_s
+    else
+      time += "00"
+    end
+    return time
   end
 
 end

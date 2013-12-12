@@ -1,18 +1,9 @@
 
 <div id="flags">
 	<% @flags.each do |f| %>
-		<div class="flag" id="flag-<%=f.id%>" onclick="flagClick(<%=f.time%>,<%=f.id%>)">
-			<div class="flag-info pull-left">
-				<div class="flag-minute pull-left">
-					<%= f.minute %>
-				</div>
-				<div class="pull-left">
-				 : 
-				</div>
-				<div class="flag-second pull-left">
-					<%= f.second %>
-				</div>
-				| <%= User.find(f.user_id).email %>
+		<div class="flag" id="flag-<%=f.id%>" data-time="<%=f.time%>" data-id="<%=f.id%>">
+			<div class="flag-info">
+				<%= f.get_time_string() %> | <%= User.find(f.user_id).email %>
 			</div>
 			<div class="flag-content">
 				<%= f.body.html_safe %>

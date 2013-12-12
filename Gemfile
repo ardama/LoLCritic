@@ -26,13 +26,14 @@ gem 'jquery-rails'
 gem 'better_errors'
 gem 'binding_of_caller', '>= 0.7.1'
 gem 'bootstrap-sass'
-gem 'font-awesome-sass-rails'
+gem 'font-awesome-sass'
 gem 'devise'
 gem 'kaminari'
 gem 'paperclip', '~> 3.0'
 gem "remotipart", "~> 1.0"
 gem 'acts-as-taggable-on'
 gem "chosen-rails"
+gem "cocoon"
 
 gem "execjs"
 gem "thin"

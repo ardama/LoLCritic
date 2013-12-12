@@ -51,6 +51,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.1)
       climate_control (>= 0.0.3, < 1.0)
+    cocoon (1.2.5)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -77,8 +78,7 @@ GEM
     eventmachine (1.0.3-x86-mingw32)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    font-awesome-sass-rails (3.0.2.2)
-      railties (>= 3.1.1)
+    font-awesome-sass (4.0.2)
       sass-rails (>= 3.1.1)
     fssm (0.2.10)
     hike (1.2.3)
@@ -174,10 +174,11 @@ DEPENDENCIES
   binding_of_caller (>= 0.7.1)
   bootstrap-sass
   chosen-rails
+  cocoon
   coffee-rails (~> 3.2.1)
   devise
   execjs
-  font-awesome-sass-rails
+  font-awesome-sass
   jquery-rails
   kaminari
   paperclip (~> 3.0)
