@@ -1,14 +1,9 @@
-// Place all the styles related to the Reviews controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
 @import "colors";
 .review {
 	margin-top: 0px;
 	padding-top: 0px;
 	padding-bottom: 5px;
-	border-top: 1px $ThemeLightGray3 solid;
+	border-top: 1px $ThemeLightGray2 solid;
 	border-top-left-radius: 5px;
 
 }
@@ -19,7 +14,7 @@
 	margin-right: 0px;
 	padding-top: 5px;
 	color: $ThemeLightGray;
-	border-left: 1px $ThemeLightGray3  solid;
+	border-left: 1px $ThemeLightGray2  solid;
 	border-top-left-radius: 5px;
 }
 .review .review-rating .postive-rating {
@@ -70,6 +65,8 @@
 .review-flags .review-flag {
 	width: 100%;
 	margin-top: 5px;
+	background-color: $ThemeLightGray3;
+	border-radius: 3px;
 }
 .review-flags .review-flag .btn {
 	margin-top: -3px;
@@ -82,7 +79,7 @@
 .review-flags .review-flag .review-flag-body {
 	word-wrap: break-word;
 	padding: 2px 4px 2px 4px;
-	border: solid 1px $ThemeLightGray2;
+	//border: solid 1px $ThemeLightGray2;
 	border-radius: 3px;
 }
 

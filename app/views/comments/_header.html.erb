@@ -1,8 +1,0 @@
-<text class="comment-form-toggle pull-left">
-	<a id="comment-form-toggle-<%= r.id.to_s%>" class="" data-toggle="collapse" href="#comment-textarea-<%= r.id.to_s%>">reply</a>
-</text>
-<% if r.comments.length > 0 %>
-	<text class="comment-show-toggle pull-left">
-		<a id="comment-show-toggle-<%= r.id.to_s%>" onclick="showMoreComments(<%= r.id.to_s%>)" href="#">show more comments</a>
-	</text>
-<% end %>
