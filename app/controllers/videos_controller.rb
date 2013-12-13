@@ -9,9 +9,16 @@ class VideosController < ApplicationController
   	@comment = Comment.new
   	@reviews = @video.reviews.order("rating desc").page(params[:page]).per(20)
 		@path = @video.generate_path
-
-		session[:flags] = []
 		@flags = []
+		if !session[:video] || session[:video] != @video.id
+			session[:video] = @video.id
+			session[:flags] = []
+		end
+		session[:flags].each do |f|
+			@flags << Flag.find(f)
+		end
+		@flags.sort_by! {|f| f.time}
+
 		@ratings = current_user.ratings
 		@review_ratings = {}
 		@comment_ratings = {}
