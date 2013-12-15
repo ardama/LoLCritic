@@ -1,11 +1,11 @@
 <% if r.flags.length > 0 %>
 	<% r.flags.each do |f| %>
 		<div class="review-flag">
-			<%= link_to add_flag_path(:id => f.id), :class => 'btn btn-secondary btn-mini', :remote => true do %>
+			<%= link_to add_flag_path(:id => f.id), :class => 'btn btn-secondary btn-mini pull-left', :remote => true do %>
 				<i class='fa fa-align-justify'></i>
 			<% end %>
-			<text class="review-flag-time"><%= f.get_time_string() %></text>
-			<text class="review-flag-body"><%= f.body %></text>
+				<div class="review-flag-time pull-left"><%= f.get_time_string() %></div>
+				<div class="review-flag-body"><%= f.body %></div>
 		</div>
 	<% end %>
 <% end %>

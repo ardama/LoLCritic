@@ -202,7 +202,11 @@ BUTTON OVERRIDES
 //	color: $ThemeWhite;
 }
 
-
+.btn-remove:hover,
+.btn-remove:focus,
+.btn-remove:active {
+	color: #FF4E4E;
+}
 
 
 
