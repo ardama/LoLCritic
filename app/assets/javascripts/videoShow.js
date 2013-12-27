@@ -37,12 +37,14 @@ function initializeFlags() {
 function updateStreamContainer() {
 	$(".flag").each(function(index) {
 		var time = $(this).data("time");
-		var videoTime = player.getCurrentTime();
-		var diff = videoTime - time;
-		if (diff > 0 && diff < 10) {
-			$(this).addClass('active');
-		} else {
-			$(this).removeClass('active');
+		if (player.getCurrentTime) {
+			var videoTime = player.getCurrentTime();
+			var diff = videoTime - time;
+			if (diff > 0 && diff < 10) {
+				$(this).addClass('active');
+			} else {
+				$(this).removeClass('active');
+			}
 		}
 	});
 }
