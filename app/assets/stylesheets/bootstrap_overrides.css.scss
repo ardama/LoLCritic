@@ -21,7 +21,9 @@ a:focus {
 	color: $ThemeBlue2;
 }
 
-
+.homepage-body {
+	-webkit-text-stroke: 0.1px;
+}
 
 /**
 NAVBAR OVERRIDES
@@ -202,7 +204,11 @@ BUTTON OVERRIDES
 //	color: $ThemeWhite;
 }
 
-
+.btn-remove:hover,
+.btn-remove:focus,
+.btn-remove:active {
+	color: #FF4E4E;
+}
 
 
 
