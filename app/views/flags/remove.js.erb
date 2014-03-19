@@ -1,0 +1,6 @@
+$('#flag-stream-container').html("<%=j render 'flags/stream' %>");
+initializeFlags();
+
+//$('#flag-button-holder-<%= @flag.id %>').removeClass('flag-added btn-primary');
+$('#flag-button-<%= @flag.id %>').removeClass('flag-added');
+setFlagTooltips();

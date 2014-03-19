@@ -1,11 +1,16 @@
 <% if r.flags.length > 0 %>
 	<% r.flags.each do |f| %>
-		<div class="review-flag">
-			<%= link_to add_flag_path(:id => f.id), :class => 'btn btn-secondary btn-mini pull-left', :remote => true do %>
-				<i class='fa fa-align-justify'></i>
+		<div class="review-flag" data-id="<%= f.id %>">
+			<%= link_to select_flag_path(:id => f.id), :remote => true do %>
+				<div class="flag-button btn btn-mini
+					<% if session[:flags].include? f.id %>
+						flag-added btn-primary
+					<% end %>
+					" id='flag-button-<%= f.id %>'><%= f.get_time_string() %>
+				</div>
 			<% end %>
-				<div class="review-flag-time pull-left"><%= f.get_time_string() %></div>
-				<div class="review-flag-body"><%= f.body %></div>
+			<div class="review-flag-body"><%= f.body %></div>
+				
 		</div>
 	<% end %>
 <% end %>

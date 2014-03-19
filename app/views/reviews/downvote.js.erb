@@ -1,0 +1,30 @@
+var newRating;
+var oldRating = parseInt($("#review-rating-<%= @rating.target_id %>").html());
+
+var upvoted = $("#review-upvote-<%= @rating.target_id %>").hasClass('voted');
+var downvoted = $("#review-downvote-<%= @rating.target_id %>").hasClass('voted');
+
+if (upvoted) {
+	newRating = oldRating - 2;
+	$("#review-upvote-<%= @rating.target_id %>").removeClass("voted");
+	$("#review-downvote-<%= @rating.target_id %>").addClass("voted");	
+} 
+else if (downvoted) {
+	newRating = oldRating + 1;
+	$("#review-downvote-<%= @rating.target_id %>").removeClass("voted");
+} 
+else {
+	newRating = oldRating - 1;
+	$("#review-downvote-<%= @rating.target_id %>").addClass("voted");
+}
+
+$("#review-rating-<%= @rating.target_id %>").removeClass("positive-rating");
+$("#review-rating-<%= @rating.target_id %>").removeClass("negative-rating");
+$("#review-rating-<%= @rating.target_id %>").html(newRating);
+
+if (newRating > 0) {
+	$("#review-rating-<%= @rating.target_id %>").addClass("positive-rating");
+}
+else if (newRating < 0) {
+	$("#review-rating-<%= @rating.target_id %>").addClass("negative-rating");
+}

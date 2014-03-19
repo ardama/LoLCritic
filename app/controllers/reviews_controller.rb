@@ -35,10 +35,28 @@ class ReviewsController < ApplicationController
 	end
 
 	def upvote
+    target_type = "review"
+    review_id = params[:id]
+    user_id = current_user.id
+
+    @rating = Rating.upvote(target_type, review_id, user_id)
+
+    respond_to do |format|
+      format.js {render 'reviews/upvote'}
+    end
 	end
 
 	def downvote
-	end
+    target_type = "review"
+    review_id = params[:id]
+    user_id = current_user.id
+
+    @rating = Rating.downvote(target_type, review_id, user_id)
+
+    respond_to do |format|
+      format.js {render 'reviews/downvote'}
+    end
+  end
 
 
 end

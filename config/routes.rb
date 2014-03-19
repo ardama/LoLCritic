@@ -30,7 +30,8 @@ LoLCritic::Application.routes.draw do
 
   resources :flags do
     member do
-      get 'add'
+      get 'select'
+      get 'remove'
     end
   end
 

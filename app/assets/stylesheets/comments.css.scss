@@ -1,19 +1,22 @@
 @import "colors";
 .review-comments {
 	width: 100%;
-	padding-top:5px;
+	padding-top:0px;
 }
 .comment {
 	min-height: 50px;
-	margin-left: 40px;
+	//margin-left: 40px;
 	padding-top: 5px;
 	padding-bottom:5px;
 	font-size: 13px;
 	//border-left: $ThemeLightGray solid 1px; 
-	border-top: $ThemeLightGray2 solid 1px; 
+	//border-top: $ThemeLightGray2 solid 1px; 
 	//border-right: $ThemeLightGray dotted 1px; 
 	position: relative;
 	//background-color: #fff;
+}
+.comment.active-comment {
+	background-color: #fafafa;
 }
 
 /*.comment:before {
@@ -27,7 +30,7 @@
 }*/
 .comment:first-child {
 	//border-top-left-radius: 3px;
-	//border-top: $ThemeLightGray2 solid 1px;
+	border-top: $ThemeLightGray2 solid 1px;
 }
 .comment:first-child:before {
 	border-top: none;
@@ -40,9 +43,9 @@
 	width:25px;
 	height: 100%;
 	text-align: center;
-	color: $ThemeLightGray;
+	color: $ThemeLightGray2;
 }
-.comment .comment-rating .postive-rating {
+.comment .comment-rating .positive-rating {
 	color: $ThemeBlue1;
 }
 
@@ -69,6 +72,14 @@
 .comment-rating .comment-rating-value {
 	line-height: 20px;
 }
+
+.comment-rating-container .comment-vote-icon {
+	color: $ThemeLightGray2;
+}
+.comment-rating-container .active-comment {
+	color: $ThemeLightGray;
+}
+
 .comment-show-toggle {
 }
 .comment-form-toggle {
@@ -77,12 +88,15 @@
 .comment-footer {
 	font-size: 12px;
 	width: 100%;
-	margin-left: 40px;
+	//margin-left: 40px;
 	border-top: $ThemeLightGray2 solid 1px; 
+}
+.active-review .comment-footer {
+	border-top-color: $ThemeLightGray;
 }
 .comment-form {
 	width: 100%;
-	margin-left: 40px;
+	//margin-left: 40px;
 
 }
 .comment-list {
@@ -99,7 +113,7 @@
 	font-size: 11px;
 }
 .comment-body {
-	width: 100%;
+	overflow:hidden;
 }
 .comment-accordion {
 	margin-bottom: 5px;
@@ -114,4 +128,9 @@
 }
 .comment-show-toggle {
 	display:none;
+}
+.comment .voted,
+.comment.active-comment .voted,
+{
+	color: $ThemeBlue1;
 }

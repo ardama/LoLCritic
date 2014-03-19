@@ -1,9 +1,9 @@
 <% count = 0 %>
-<% r.comments.each do |c| %>
+<% r.comments.order("created_at desc").each do |c| %>
 	<% if count < 4 %>
-		<div class="comment">
+		<div class="comment " data-id="<%= c.id %>">
 	<% else %>
-		<div class="comment comment-hidden">
+		<div class="comment comment-hidden animated fadeInDown" data-id="<%= c.id %>">
 	<% end %>
 		<div class="comment-rating pull-left">
 			<%= render "comments/rating", :c => c %>
@@ -12,7 +12,7 @@
 			<text class="comment-user"><%= User.find(c.user_id).email %></text>
 			<text class="comment-time"><%= c.generate_time() %></text>
 		</div>
-		<text class="comment-body"><%= c.body %></text>
+		<div class="comment-body"><%= c.body %></div>
 	</div>
 	<% count += 1 %>
 <% end %>

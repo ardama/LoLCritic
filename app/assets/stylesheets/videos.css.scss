@@ -10,7 +10,7 @@
 	//border-bottom: 1px solid $ThemeBlue1;
 	margin-top: 0px;
 	position:relative;
-	box-shadow:  0 1px 1px -1px $ThemeBlue1;
+	border-bottom: 1px solid $ThemeLightGray2;
 }
 
 .video-listing:nth-child(even) {
@@ -23,6 +23,7 @@
 //	z-index: 0;
 
 }
+
 
 .thumbnail-link {
 	vertical-align: middle;
@@ -79,7 +80,7 @@
 }
 .video-listing-body {
 	height:60px;
-	//position:relative;
+	position:relative;
 }
 
 .video-listing-tags {
@@ -121,10 +122,19 @@ u.description-opponent {
 	border-right: 3px solid $ThemeRed;
 }
 
+.video-listing .tag-button {
+	padding: 0 4px 0 4px;
+	border-radius: 3px 3px 3px 3px;
+	font-size: 11px;
+	line-height: 18px;
+}
+
 .video-listing-focus {
 	font-size: 10pt;
 	line-height: 16px;
 	margin-left: 60px;
+	position: absolute;
+	bottom: 0px;
 }
 .video-listing-focus u {
 	text-decoration: none;
@@ -194,6 +204,7 @@ u.description-opponent {
 	text-align: left;
 	padding:0px;
 	font-size: 10pt;
+	cursor: pointer;
 }
 .flag:first-child {
 }
@@ -211,6 +222,16 @@ u.description-opponent {
 }
 .flag-time {
 	padding-left: 10px;
+}
+.flag .close-container {
+	display: inline-block;
+	float:right;
+}
+.flag .close {
+	color: $ThemeLightGray;
+	line-height: 12px;
+	margin-right: 6px;
+	text-shadow: 0 1px 0 $ThemeBlack;
 }
 
 

@@ -35,10 +35,28 @@ class CommentsController < ApplicationController
 	end
 
 	def upvote
+    target_type = "comment"
+    comment_id = params[:id]
+    user_id = current_user.id
+
+    @rating = Rating.upvote(target_type, comment_id, user_id)
+
+    respond_to do |format|
+      format.js {render 'comments/upvote'}
+    end
 	end
 
 	def downvote
-	end
+    target_type = "comment"
+    comment_id = params[:id]
+    user_id = current_user.id
+
+    @rating = Rating.downvote(target_type, comment_id, user_id)
+
+    respond_to do |format|
+      format.js {render 'comments/downvote'}
+    end
+  end
 
 
 end

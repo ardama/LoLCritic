@@ -1,2 +1,6 @@
 $('#flag-stream-container').html("<%=j render 'flags/stream' %>");
 initializeFlags();
+
+//$('#flag-button-holder-<%= @flag.id %>').addClass('flag-added btn-primary');
+$('#flag-button-<%= @flag.id %>').addClass('flag-added');
+setFlagTooltips();

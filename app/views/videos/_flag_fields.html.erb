@@ -7,7 +7,7 @@
 
 	<div class="input-prepend flag-body-input field">
 		<span class="add-on pull-left"><i class='fa fa-comment-o'></i></span>
-		<%= f.text_field :body, {:class => 'flag-body', :placeholder => "Flag comment...", :maxlength => 200} %>
+		<%= f.text_field :body, {:class => 'flag-body', :placeholder => "Write a note...", :maxlength => 200} %>
 	</div>
 
     <%= f.hidden_field :user_id, :value => current_user.id %>

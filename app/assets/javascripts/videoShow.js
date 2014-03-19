@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+	// Collapse/expand review form
 	$('.review-toggle').click(function() {
 		if ($(this).html().trim() == "Write Review <i class=\"fa fa-caret-down\"></i>") {
 			$(this).html("Hide Review <i class=\"fa fa-caret-up\"></i>");
@@ -7,6 +9,58 @@ $(document).ready(function() {
 			$(this).html("Write Review <i class=\"fa fa-caret-down\"></i>");
 		}
 	});
+
+	// Review hover functionality
+	$('.review').hover(function() {
+		var id = $(this).data('id');
+		var upvote = "#review-upvote-" + id;
+		var downvote = "#review-downvote-" + id;
+		var rating = "#review-rating-" + id;
+
+		$(upvote).addClass("active-review");
+		$(downvote).addClass("active-review");
+		$(rating).addClass("active-review");
+		$(this).addClass("active-review");
+
+	}, function() {
+		var id = $(this).data('id');
+		var upvote = "#review-upvote-" + id;
+		var downvote = "#review-downvote-" + id;
+		var rating = "#review-rating-" + id;
+
+		$(upvote).removeClass("active-review");
+		$(downvote).removeClass("active-review");
+		$(rating).removeClass("active-review");
+		$(this).removeClass("active-review");
+
+	});
+
+	// Hover functionality on review flags
+	// $('.review-flag').hover(function() {
+	// 	var obj = $(this);
+	// 	obj.addClass('flag-hover');
+	// 	id = $(this).data('id');
+	// 	holderId = '#flag-button-holder-' + id.toString();
+	// 	buttonId = '#flag-button-' + id.toString();
+	// 	setTimeout(function() {
+	// 		if (obj.hasClass('flag-hover')) {
+	// 			$(holderId).css('display', 'none');
+	// 			$(buttonId).css('display', 'inline-block');
+	// 		}
+	// 	}, 150);
+
+	// }, function() {
+	// 	$(this).removeClass('flag-hover');
+	// 	id = $(this).data('id');
+	// 	holderId = '#flag-button-holder-' + id.toString();
+	// 	buttonId = '#flag-button-' + id.toString();
+
+	// 	$(holderId).css('display', 'inline-block');
+	// 	$(buttonId).css('display', 'none');
+
+	// });
+
+	// Show more comments functionality
 	$('.comment-show-toggle').click(function() {
 		id = $(this).data('id');
 		elemId = "#comment-list-" + id.toString();		
@@ -20,6 +74,37 @@ $(document).ready(function() {
 	});
 	checkAllShowMoreComments();
 
+	// Comment hover functionality
+	$('.comment').hover(function() {
+		var id = $(this).data('id');
+		var upvote = "#comment-upvote-" + id;
+		var downvote = "#comment-downvote-" + id;
+		var rating = "#comment-rating-" + id;
+
+		$(upvote).addClass("active-comment");
+		$(downvote).addClass("active-comment");
+		$(rating).addClass("active-comment");
+		$(this).addClass("active-comment");
+
+	}, function() {
+		var id = $(this).data('id');
+		var upvote = "#comment-upvote-" + id;
+		var downvote = "#comment-downvote-" + id;
+		var rating = "#comment-rating-" + id;
+
+		$(upvote).removeClass("active-comment");
+		$(downvote).removeClass("active-comment");
+		$(rating).removeClass("active-comment");
+		$(this).removeClass("active-comment");
+
+	});
+
+	$('.close-container').click(function(event) {
+		console.log("here");
+		event.stopPropagation();
+	});
+	initializeFlags();
+	setFlagTooltips();
 });
 
 
@@ -72,5 +157,20 @@ function checkShowMoreComments(index) {
 	} else {
 		$('#comment-show-toggle-' + index.toString()).hide();	
 	}
-	console.log(index.toString());
+}
+
+function setFlagTooltips() {
+	// reset tooltips
+	$('.flag-button').tooltip('hide');
+	$('.flag-button').data('tooltip', false);
+
+	var removeTooltipOptions = {"delay": {"show":200, "hide": 0},
+						  "animation":false,
+						  "title":"Remove Note from Stream"};
+	$('.flag-added').tooltip(removeTooltipOptions);
+
+	var addTooltipOptions = {"delay": {"show":200, "hide": 0},
+						  "animation":false,
+						  "title":"Add Note to Stream"};
+	$('.flag-button').tooltip(addTooltipOptions);
 }

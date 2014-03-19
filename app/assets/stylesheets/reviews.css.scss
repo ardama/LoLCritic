@@ -3,9 +3,12 @@
 	margin-top: 0px;
 	padding-top: 0px;
 	padding-bottom: 5px;
-	border-top: 1px $ThemeLightGray2 solid;
-	border-top-left-radius: 5px;
+	border-top: 2px $ThemeLightGray2 solid;
+	border-top-left-radius: 8px;
 
+}
+.review.active-review {
+	border-top-color: $ThemeLightGray;
 }
 .review .review-rating {
 	width:40px;
@@ -13,11 +16,19 @@
 	text-align: center;
 	margin-right: 0px;
 	padding-top: 5px;
-	color: $ThemeLightGray;
-	border-left: 1px $ThemeLightGray2  solid;
-	border-top-left-radius: 5px;
+	color: $ThemeLightGray2;
+	border-left: 2px $ThemeLightGray2  solid;
+	border-top-left-radius: 7px;
 }
-.review .review-rating .postive-rating {
+.review.active-review .review-rating {
+	color: $ThemeLightGray;
+	border-left-color: $ThemeLightGray;
+}
+.review .review-rating .review-rating-value {
+	//color: $ThemeGray1;
+}
+
+.review .review-rating .positive-rating {
 	color: $ThemeBlue1;
 }
 .review-rating .upvote-container {
@@ -56,7 +67,7 @@
 }
 .review-body {
 	word-wrap: break-word;
-	min-height: 29px;
+	padding-bottom: 5px;
 }
 .review-flags {
 	margin-top: 8px;
@@ -64,12 +75,38 @@
 }
 .review-flags .review-flag {
 	width: 100%;
-	margin-top: 5px;
+	//padding-top: 5px;
 	border-radius: 3px;
 }
-.review-flags .review-flag .btn {
-	color: $ThemeGray1;
+.review-flags .review-flag a:hover {
+	text-decoration: none;
+}
 
+.review-flags .review-flag .flag-button {
+	color:$ThemeBlue1;
+	background-color: #fff;
+	vertical-align: top;
+	margin-top: 0px;
+	width:30px;
+	font-size: 13px;
+	font-weight: bold;
+	border-radius: 5px 0 0 0;
+}
+.review-flags .review-flag .flag-button:hover,
+.review-flags .review-flag .flag-button:focus,
+.review-flags .review-flag .flag-button:active {
+	border-color: $ThemeBlue1;
+}
+
+.review-flags .review-flag .flag-button.flag-added {
+	background-color: $ThemeBlue1;
+	color: #fff;
+	border-color: $ThemeBlue1;
+}
+
+.review-flags .review-flag .flag-button.flag-added:hover,
+.review-flags .review-flag .flag-button.flag-added:focus,
+.review-flags .review-flag .flag-button.flag-added:active {
 }
 .review-flags .review-flag .review-flag-time {
 	color: $ThemeBlue1;
@@ -78,22 +115,35 @@
 
 }
 .review-flags .review-flag .review-flag-body {
+	color: $ThemeBlack;	
 	word-wrap: break-word;
-	padding: 0px 4px 0px 4px;
-	border: solid 1px $ThemeLightGray2;
-	border-radius: 3px;
+	padding: 0px 4px 6px 10px;
+	//border: solid 1px $ThemeLightGray2;
+	//border-radius: 3px;
 	display: inline-block;
 	max-width: 740px;
+	margin-left: -4px;
+	border-top: 1px solid $ThemeLightGray2;
+
+}
+.review-flags .flag-hover.review-flag  {
+	background-color: #fafafa;
 }
 
-.vote-icon {
-	color: $ThemeLightGray;
+.review-vote-icon {
+	color: $ThemeLightGray2;
+}
+.active-review .review-vote-icon {
+	color:$ThemeLightGray;
 }
 .vote-icon:hover {
 	color: $ThemeBlue2;
 	text-decoration: none;
 }
-.voted {
+
+.review .voted,
+.review.active-review .voted,
+{
 	color: $ThemeBlue1;
 }
 

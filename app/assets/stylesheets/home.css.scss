@@ -106,6 +106,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 #homepage-video-tabs li a{
 	color: $ThemeWhite;
 	border: 1px solid $ThemeBlue1;
+	border-radius: 3px;
+
 }
 #homepage-video-tabs li a:hover{
 	background-color: $ThemeWhite;
@@ -154,6 +156,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 	color: $ThemeWhite;
 	font-size: 14px;
 	font-weight: bold;
+	border-radius: 8px 0 0 0;
 }
 #filters-header p {
 	padding-top: 10px;
@@ -163,6 +166,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 	margin-top: 20px;
 	width: 270px;
 	background-color: $ThemeDarkGray1;
+	border-radius: 8px 0 0 0;
+
 }
 
 #filters .btn-filter {

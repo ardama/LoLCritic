@@ -4,6 +4,9 @@
 		<div class="flag" id="flag-<%=f.id%>" data-time="<%=f.time%>" data-id="<%=f.id%>">
 			<div class="flag-info">
 				<%= f.get_time_string() %> | <%= User.find(f.user_id).email %>
+				<div class="close-container">
+					<%= link_to raw('&times;'), {:controller => 'flags', :action => 'remove', :id => f.id, :remote => :true}, {:class => 'close'} %>
+				</div>
 			</div>
 			<div class="flag-content">
 				<%= f.body.html_safe %>
