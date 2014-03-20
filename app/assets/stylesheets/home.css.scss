@@ -46,11 +46,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$ThemeBlue1',
 	height:350px;
 	padding-top: 0px;
 	left: 0px;
+	border-top-right-radius: 7px;
+}
+
+#band-1 #signup-form .homepage-form-header{
+	border-top-right-radius: 7px;
 }
 #band-1 #signin-form {
 	height:350px;
 	padding-top: 0px;
 	right: 0px;
+	border-top-left-radius: 7px;
+}
+#band-1 #signin-form .homepage-form-header{
+	border-top-left-radius: 7px;
 }
 #band-1 #signin-form .remember-me {
 	padding-right: 40px;
