@@ -23,6 +23,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'better_errors'
 gem 'binding_of_caller', '>= 0.7.1'
 gem 'bootstrap-sass'

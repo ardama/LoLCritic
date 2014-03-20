@@ -1,0 +1,35 @@
+@import 'colors';
+.signup-header {
+	background: $ThemeBlue1;
+	margin: 30px 0px 20px 100px;
+	padding: 10px 15px;
+	color: $ThemeWhite;
+	width:384px;
+	border-top-left-radius: 7px;
+}
+.signup-header .header {
+	margin: 0px;
+}
+
+.signin-header {
+	background: $ThemeBlue1;
+	margin: 30px 0px 20px 100px;
+	padding: 10px 15px;
+	color: $ThemeWhite;
+	width:384px;
+	border-top-left-radius: 7px;
+}
+.signin-header .header {
+	margin: 0px;
+}
+.remember-me {
+	margin-left: 100px;
+}
+.remember-me label {
+	margin-left:3px;
+	margin-bottom: 0px;
+}
+
+.devise-links {
+	margin-left: 100px;
+}

@@ -14,16 +14,59 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$ThemeBlue1',
 }
 
 #band-1 {
-	height:350px;
+	height:450px;
 	text-align: center;
 	color: $ThemeWhite;
-	padding-top: 100px;
+}
+#band-1 .container {
+	height:100%;
+}
+#band-1 img {
+	margin-top: 100px;
+}
+#band-1 .homepage-form-container {
+	display: none;
+	width:300px;
+	background-color: $ThemeGrayo;
+	position:absolute;
+	top: 85px;
+	z-index:1;
+}
+#band-1 .homepage-form-header {
+	height:20px;
+	background-color:$ThemeDarkGray2;
+	padding:15px;
+	margin-bottom:20px;
+}
+#band-1 .homepage-form-header h4 {
+	margin: 0px;
+}
 
+#band-1 #signup-form {
+	height:350px;
+	padding-top: 0px;
+	left: 0px;
 }
-#band-1 h1 {
-	font-size: 80pt;
-	line-height: 100px;
+#band-1 #signin-form {
+	height:350px;
+	padding-top: 0px;
+	right: 0px;
 }
+#band-1 #signin-form .remember-me {
+	padding-right: 40px;
+	padding-top: 5px;
+}
+#band-1 #signin-form .remember-me label {
+	margin-left:3px;
+	margin-bottom: 0px;
+}
+#band-1 #homepage-logo {
+	display: inline-block;
+}
+
+
+
+
 #band-2 {
 	background-color: $ThemeWhite;
 	text-align: center;

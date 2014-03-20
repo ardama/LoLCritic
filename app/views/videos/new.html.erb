@@ -7,60 +7,60 @@ Upload Video
 <% end %>
 
 <div class="row-fluid">
-<div class="span8 offset2">
-  <% if current_user %>
-    <div class="upload-header">
-      <h3 class="header ">Upload a video</h3>
-    </div>
-    <%= form_for @video, :html => { :multipart => true, :class => "form-horizontal" } do |f| %>
-     
-      <div class="field control-group">
-        <%= f.label :title, :class => "control-label" %>
-        <div class="controls">
-          <%= f.text_field :title, :placeholder => "What would you like to call this video?", :style => "width:400px", :required => true %>
-        </div>
+  <div class="span8 offset2">
+    <% if current_user %>
+      <div class="upload-header">
+        <h3 class="header ">Upload a video</h3>
       </div>
-
-      <div class="field control-group">
-        <%= f.label :link, :class => "control-label" %>
-        <div class="controls">
-          <%= f.text_field :link, :placeholder => "What is the URL of the YouTube video?", :style => "width:400px", :required => true %>
+      <%= form_for @video, :html => { :multipart => true, :class => "form-horizontal" } do |f| %>
+       
+        <div class="field control-group">
+          <%= f.label :title, :class => "control-label" %>
+          <div class="controls">
+            <%= f.text_field :title, :placeholder => "What would you like to call this video?", :style => "width:400px", :required => true %>
+          </div>
         </div>
-      </div>
 
-      <div class="field control-group">
-        <%= f.label :info, :class => "control-label" %>
-        <div class="controls">
-          <%= f.select(:champion, options_for_select({"" => "None"}),{},{:class => "chosen-single"})%>  
-          <%= f.select(:opponent, options_for_select({"" => "None"}),{},{:class => "chosen-single"})%> 
-          <%= f.select(:lane, options_for_select({"" => "None"}),{},{:class => "chosen-single"})%> 
-          <%= f.select(:position, options_for_select({}),{},{:class => "chosen-multiple", :multiple => true})%>
-          <%= f.select(:focus, options_for_select({}),{},{:class => "chosen-multiple", :multiple => true})%>
+        <div class="field control-group">
+          <%= f.label :link, :class => "control-label" %>
+          <div class="controls">
+            <%= f.text_field :link, :placeholder => "What is the URL of the YouTube video?", :style => "width:400px", :required => true %>
+          </div>
         </div>
-      </div>
 
-      <div class="field control-group">
-        <%= f.label :replay, :class => "control-label" %>
-        <div class="controls">
-          <%= f.file_field :supplemental %>
+        <div class="field control-group">
+          <%= f.label :info, :class => "control-label" %>
+          <div class="controls">
+            <%= f.select(:champion, options_for_select({"" => "None"}),{},{:class => "chosen-single"})%>  
+            <%= f.select(:opponent, options_for_select({"" => "None"}),{},{:class => "chosen-single"})%> 
+            <%= f.select(:lane, options_for_select({"" => "None"}),{},{:class => "chosen-single"})%> 
+            <%= f.select(:position, options_for_select({}),{},{:class => "chosen-multiple", :multiple => true})%>
+            <%= f.select(:focus, options_for_select({}),{},{:class => "chosen-multiple", :multiple => true})%>
+          </div>
         </div>
-      </div>
 
-      <div class="field control-group">
-        <div class="controls">
-          <%= link_to 'Back', root_url, :class => "btn btn-large" %>
-          <%= f.submit "Submit", :class => "btn btn-primary btn-large" %>
+        <div class="field control-group">
+          <%= f.label :replay, :class => "control-label" %>
+          <div class="controls">
+            <%= f.file_field :supplemental %>
+          </div>
         </div>
-      </div>
+
+        <div class="field control-group">
+          <div class="controls">
+            <%= link_to 'Back', root_url, :class => "btn btn-large" %>
+            <%= f.submit "Submit", :class => "btn btn-primary btn-large" %>
+          </div>
+        </div>
 
 
-      <%= f.hidden_field :user_id, :value => current_user.id %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
 
+      <% end %>
+    <% else %>
+
+    Please sign in or create an account to upload a video.
+    <%= link_to 'Back', root_url, :class => "btn" %>
     <% end %>
-  <% else %>
-
-  Please sign in or create an account to upload a video.
-  <%= link_to 'Back', root_url, :class => "btn" %>
-  <% end %>
-</div>
+  </div>
 </div>

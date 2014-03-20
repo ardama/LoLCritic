@@ -189,15 +189,16 @@ BUTTON OVERRIDES
 }
 
 .btn-secondary {
-//	background-color: $ThemeDarkGray1;
-//	color: $ThemeWhite;
+	background-color: $ThemeDarkGray1;
+	color: $ThemeWhite;
+	border-color: $ThemeDarkGray2;
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus,
 .btn-secondary:active {
-//	background-color: $ThemeGray;
-//	color: $ThemeWhite;
+	background-color: $ThemeGray;
+	color: $ThemeWhite;
 }
 
 .btn-remove:hover,
