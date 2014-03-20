@@ -54,18 +54,18 @@ window.onresize = function () {
 
 
 $(document).ready(function() {
-	$('#wysi-textarea').width($('#video-container').width() - 32);
+	setSize();
 	$('#wysi-textarea').wysihtml5();
 
 	window.setInterval(function(){
-		//videoShow.js
-		updateStreamContainer();
+		updateStreamContainer(); // from videoShow.js
 	}, 1000);
 
 	$('#add-flag-btn').click(function() {
 		setTimeout(function() {	
 			var width = $("#video-container").width();
 			setFlagSize(width);
+			$('.flag-form').last().find('.input-mini').first().focus();
 		}, 10);
 	});
 });

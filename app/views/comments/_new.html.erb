@@ -3,6 +3,7 @@
     	<div class="comment-accordion" id="comment-accordion-textarea">
      	<%= c.text_area :body, :placeholder=>"Write a comment...", :class => 'comment-form-textarea'%>
     	<%= hidden_field_tag :review_id, r.id %>
+    	</br>
     	<%= c.submit "Submit", :class => 'btn btn-primary'%>
     	</div>
     </div>

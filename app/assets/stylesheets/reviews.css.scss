@@ -75,8 +75,6 @@
 }
 .review-flags .review-flag {
 	width: 100%;
-	//padding-top: 5px;
-	border-radius: 3px;
 }
 .review-flags .review-flag a:hover {
 	text-decoration: none;
@@ -90,12 +88,16 @@
 	width:30px;
 	font-size: 13px;
 	font-weight: bold;
-	border-radius: 5px 0 0 0;
+	border-radius: 0px;
 }
 .review-flags .review-flag .flag-button:hover,
 .review-flags .review-flag .flag-button:focus,
 .review-flags .review-flag .flag-button:active {
 	border-color: $ThemeBlue1;
+}
+
+.review-flags .review-flag:first-child .flag-button {
+	border-radius: 5px 0 0 0;
 }
 
 .review-flags .review-flag .flag-button.flag-added {
@@ -118,8 +120,6 @@
 	color: $ThemeBlack;	
 	word-wrap: break-word;
 	padding: 0px 4px 6px 10px;
-	//border: solid 1px $ThemeLightGray2;
-	//border-radius: 3px;
 	display: inline-block;
 	max-width: 740px;
 	margin-left: -4px;
